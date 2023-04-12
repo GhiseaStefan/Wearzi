@@ -1,0 +1,62 @@
+.ProductPage {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.ProductPage .product-container {
+    position: relative;
+    display: flex;
+}
+
+.ProductPage .util-section {
+    width: 275px;
+    height: 700px;
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ProductPage .util-item {
+    margin-top: 10px;
+}
+
+.ProductPage .util-item p {
+    font-size: 22px;
+}
+
+.ProductPage .bold-text {
+    font-weight: bold;
+}
+
+.ProductPage .small-gray {
+    font-size: 16px;
+    color: #777576;
+}
+
+.ProductPage .discount-text {
+    color: #ec555b;
+}
+
+.ProductPage .not-discount-text {
+    color: #ccc;
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+
+.ProductPage .btn {
+    border: 1px solid #ccc;
+    padding: 8px 32px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #333;
+    transition: all .3s ease;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.ProductPage .btn:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}

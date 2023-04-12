@@ -1,0 +1,29 @@
+.MyCarousel {
+    display: flex;
+    user-select: none;
+}
+
+.MyCarousel .thumbnails {
+    margin-right: 20px;
+}
+
+.MyCarousel .thumbnail {
+    width: 44px;
+    height: 56px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.MyCarousel .thumbnail img {
+    width: 100%;
+    height: 100%;
+}
+
+.MyCarousel .active-thumbnail {
+    box-shadow: rgba(236, 85, 91, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.MyCarousel .main-image img {
+    width: 510px;
+    height: 650px;
+}

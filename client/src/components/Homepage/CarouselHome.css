@@ -1,0 +1,105 @@
+.CarouselHome .carousel-root.carousel-models {
+    overflow: hidden;
+    height: 636px;
+    background-color: #f4f4f4;
+}
+
+.CarouselHome .carousel-root.carousel-models img {
+    margin-top: 40px;
+    height: 600px;
+    max-width: 250px;
+    position: relative;
+    left: 20%;
+}
+
+.CarouselHome .carousel-root .slide-info {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    width: 400px;
+    text-align: left;
+    opacity: 0;
+    transition: opacity .1s ease;
+    transition: top .3s ease;
+}
+
+.CarouselHome .carousel-root .show {
+    opacity: 1;
+    top: 30%;
+    transition: all .3s ease;
+}
+
+.CarouselHome .carousel-root .slide-info p {
+    color: #ec555b;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.CarouselHome .carousel-root .slide-info h2 {
+    color: #000;
+    font-size: 60px;
+    line-height: 1.33;
+    margin-bottom: 30px;
+}
+
+.CarouselHome .carousel-root .slide-info div {
+    color: #000;
+    letter-spacing: 0.6;
+    line-height: 2;
+    position: relative;
+    text-decoration: none;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.CarouselHome .carousel-root .slide-info div:hover {
+    color: #ec555b;
+    border-bottom-color: #ec555b;
+}
+
+.CarouselHome .carousel-root.carousel-models {
+    position: relative;
+}
+
+.CarouselHome .carousel-root.carousel-models .control-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    background-color: #3d3d3d;
+    opacity: 1;
+}
+
+.CarouselHome .carousel-root.carousel-models .control-prev {
+    left: -40px;
+    transition: all 0.3s ease-in-out;
+}
+
+.CarouselHome .carousel-root.carousel-models .control-next {
+    right: -40px;
+    transition: all 0.3s ease-in-out;
+}
+
+.CarouselHome .carousel-root.carousel-models:hover .control-prev {
+    left: 20px;
+    background-color: #3d3d3d;
+}
+
+.CarouselHome .carousel-root.carousel-models:hover .control-next {
+    right: 20px;
+    background-color: #3d3d3d;
+}

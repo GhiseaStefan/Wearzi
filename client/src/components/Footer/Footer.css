@@ -1,0 +1,113 @@
+.Footer {
+    margin-top: 20px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+.Footer .item {
+    margin-top: 50px;
+    margin-right: 100px;
+}
+
+.Footer .item:last-child {
+    margin-right: 0;
+}
+
+.Footer .item h2 {
+    text-transform: uppercase;
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 2;
+}
+
+.Footer .item p {
+    color: #777576;
+    cursor: pointer;
+    line-height: 2;
+    transition: color .3s ease;
+}
+
+.Footer .item p:hover {
+    color: #000;
+}
+
+.Footer .item .subitem-1 {
+    margin-bottom: 30px;
+}
+
+.Footer .item .subitem-1 div {
+    display: flex;
+    justify-content: center;
+}
+
+.Footer .item .subitem-1 img {
+    margin-right: 5px;
+}
+
+.Footer .item .subitem-1 img:last-child {
+    margin-right: 0px;
+}
+
+.Footer .item .subitem-2 a {
+    color: #777576;
+    display: inline-block;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 20px;
+    transition: color .3s ease;
+    padding: 3px 10px 3px 8px;
+}
+
+.Footer .item .subitem-2 a:last-child {
+    margin-right: 0px;
+}
+
+.Footer .item .subitem-2 a:hover {
+    color: #ec555b;
+}
+
+.Footer .item .p-small {
+    font-size: 14px;
+}
+
+.Footer .item .p-small:hover {
+    color: #777576;
+    cursor: default;
+}
+
+.Footer .newsletter-form {
+    position: relative;
+    margin-top: 30px;
+}
+
+.Footer .newsletter-form input[type=text] {
+    background-color: #fff;
+    border-radius: 63px;
+    width: 80%;
+    padding-left: 20px;
+    padding-right: 50px;
+    height: 38px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.Footer .newsletter-form input[type=submit] {
+    background-image: url('../../../public/svgs/newsletter-icon.svg');
+    border: none;
+    position: absolute;
+    background-color: transparent;
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding: 0 25px;
+    height: 100%;
+    left: auto;
+    margin-left: -55px;
+}

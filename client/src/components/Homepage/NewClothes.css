@@ -1,0 +1,49 @@
+.NewClothes {
+    height: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+}
+
+.NewClothes h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.NewClothes .part1, .NewClothes .part2  {
+    height: 550px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.NewClothes .part2 {
+    border-top: 2px solid #ccc;
+}
+
+.NewClothes .product-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 550px;
+    margin-left: 50px;
+}
+
+.NewClothes img {
+    width: 250px;
+    height: 350px;
+    transition: transform .3s ease;
+    cursor: pointer;
+}
+
+.NewClothes img:hover {
+    transform: scale(1.1);
+}
+
+.NewClothes p {
+    margin-top: 20px;
+    z-index: 1;
+}

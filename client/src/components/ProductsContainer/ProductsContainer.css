@@ -1,0 +1,294 @@
+.ProductsContainer {
+    margin-top: 120px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ProductsContainer .VerticalNavBar {
+    position: fixed;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #f4f4f4;
+    margin-top: -20px;
+}
+
+.VerticalNavBar ul {
+    list-style-type: none;
+}
+
+.VerticalNavBar a {
+    text-decoration: none;
+    color: #777576;
+}
+
+.VerticalNavBar a:hover {
+    border-bottom: 2px solid #777576;
+}
+
+.VerticalNavBar .active-subcategory {
+    color: #000;
+}
+
+.VerticalNavBar .active-subcategory:hover {
+    border-bottom-color: #000;
+}
+
+.VerticalNavBar .subcategory-list {
+    margin-left: 20px;
+}
+
+.VerticalNavBar .subcategory-list > li {
+    margin-top: 20px;
+}
+
+.VerticalNavBar .active-product-type {
+    color: #000;
+}
+
+.VerticalNavBar .active-product-type:hover {
+    border-bottom-color: #000;
+}
+
+.VerticalNavBar .product-type-list {
+    margin-left: 20px;
+}
+
+.VerticalNavBar .product-type-list >li {
+    margin-top: 10px;
+}
+
+.ProductsContainer .products-container-content {
+    position: relative;
+    right: 0;
+    min-height: 500px;
+    width: 80%;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ProductsContainer .edit-bar {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    margin-bottom: 20px;
+    align-self: first baseline;
+    margin-left: 30px;
+}
+
+.ProductsContainer .edit-item {
+    margin-right: 50px;
+}
+
+.ProductsContainer .edit-item:last-child {
+    margin-right: 0;
+}
+
+.ProductsContainer .edit-item-name {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ProductsContainer .arrow {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    transform: rotate(225deg);
+    transition: transform .3s ease;
+    margin-left: 10px;
+}
+
+.ProductsContainer .open {
+    transform: rotate(45deg);
+}
+
+.ProductsContainer .dropdown-container {
+    position: absolute;
+    background-color: #fff;
+    width: 320px;
+    box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 20px 0px;
+    margin-top: 5px;
+    display: none;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.ProductsContainer .visible {
+    display: block;
+}
+
+.ProductsContainer .dropdown-item {
+    margin-top: 5px;
+    padding: 8px;
+}
+
+.ProductsContainer .edit-bar input[type='radio'],
+.ProductsContainer .edit-bar input[type='checkbox'] {
+    display: none;
+}
+
+.ProductsContainer .edit-bar input[type='radio']+label,
+.ProductsContainer .edit-bar input[type='checkbox']+label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    color: #777576;
+}
+
+.ProductsContainer .edit-bar input[type='radio']+label::before,
+.ProductsContainer .edit-bar input[type='checkbox']+label::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    border: 1px solid #777576;
+    border-radius: 50%;
+}
+
+.ProductsContainer .edit-bar input[type='radio']:checked+label::before,
+.ProductsContainer .edit-bar input[type='checkbox']:checked+label::before {
+    background-color: #000;
+    border-color: #000;
+}
+
+.ProductsContainer .edit-bar input[type='radio']+label::after,
+.ProductsContainer .edit-bar input[type='checkbox']+label::after {
+    content: '';
+    display: none;
+}
+
+.ProductsContainer .edit-bar input[type='radio']:checked+label::before,
+.ProductsContainer .edit-bar input[type='checkbox']:checked+label::before {
+    background-color: #000;
+    border-color: #000;
+    background-clip: content-box;
+    box-shadow: inset 0 0 0 1px #000, inset 0 0 0 4px #fff;
+}
+
+.ProductsContainer .edit-bar input[type='radio']:checked+label,
+.ProductsContainer .edit-bar input[type='checkbox']:checked+label {
+    color: #000;
+}
+
+.ProductsContainer .dropdown-item input[type=text] {
+    background-color: #fff;
+    border-radius: 63px;
+    padding-left: 20px;
+    height: 38px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.ProductsContainer .normal-button {
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all .3s ease;
+    padding: 0 12px
+}
+
+.ProductsContainer .normal-button:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.ProductsContainer .products-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1470px;
+}
+
+.ProductsContainer .Product {
+    width: 288px;
+    height: 462px;
+    margin-right: 5px;
+    position: relative;
+}
+
+.ProductsContainer .Product img {
+    width: 288px;
+    height: 384px;
+}
+
+.ProductsContainer .Product h2 {
+    color: #000;
+    font-size: 16px;
+    line-height: 2;
+    font-weight: normal;
+}
+
+.ProductsContainer .Product h3 {
+    color: #000;
+    font-size: 16px;
+    line-height: 2;
+    font-weight: normal;
+}
+
+.ProductsContainer .Product .discount-text {
+    color: #ec555b;
+}
+
+.ProductsContainer .Product .not-discount-text {
+    color: #ccc;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.ProductsContainer .Product .discount-tag {
+    background-color: #ec555b;
+    display: inline-block;
+    border-radius: 6px;
+    color: #fff;
+    padding: 2px 4px;
+    font-size: 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.ProductsContainer .incarca-produse {
+    display: flex;
+    flex-direction: column;
+}
+
+.ProductsContainer .large-button {
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all .3s ease;
+}
+
+.ProductsContainer .large-button:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.ProductsContainer .progress-bar {
+    width: 0%;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    background-color: #000;
+    height: 5px;
+}

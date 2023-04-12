@@ -1,0 +1,14 @@
+.AddProductTemp {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.AddProductTemp .form-item {
+    margin-top: 20px;
+}
+
+.AddProductTemp label {
+    width: 130px;
+    display: inline-block;
+}
