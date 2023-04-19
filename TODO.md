@@ -1,6 +1,4 @@
-Incarcare pe git versiune 1.0 demo guest
 Pornire user mode
-
 
 
 
@@ -10,6 +8,8 @@ Pornire user mode
     Standardizarea si polisharea in fisierele css
     De completat 404 not found
     De modificat CategoryPage eventual
+    De aranjat trainingData
+    Fixeaza sa nu apara nimic cand nu adaugi marime pentru anumite obiecte
 ## Navbar
     De facut navbaru sa dispara / apara cand scrollezi
     Umblat la navbar pentru categorii tip categorie 1 cu text sau tip categorie 2 cu imagini

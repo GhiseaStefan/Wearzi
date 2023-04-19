@@ -21,11 +21,11 @@ const PreviewCart = ({ cartItems }) => {
               <p>{ci.color} - {ci.size.join(', ')}</p>
               <p>Cantitate: {ci.quantity}</p>
               {ci.discount === 0 ?
-                <p className='bold'>{ci.price * ci.quantity} RON</p>
+                <p className='bold'>{(ci.price * ci.quantity).toFixed(2)} RON</p>
                 :
                 <p className='bold'>
-                  <span className='discount-text'>{discountedPrice(ci.price, ci.discount) * ci.quantity} RON </span>
-                  <span className='not-discount-text'>{ci.price * ci.quantity} RON</span>
+                  <span className='discount-text'>{(discountedPrice(ci.price, ci.discount) * ci.quantity).toFixed(2)} RON </span>
+                  <span className='not-discount-text'>{(ci.price * ci.quantity).toFixed(2)} RON</span>
                 </p>
               }
             </div>

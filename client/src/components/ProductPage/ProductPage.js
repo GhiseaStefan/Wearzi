@@ -70,10 +70,12 @@ const ProductPage = ({ product, cartItems, setCartItems }) => {
           <div className='util-item'>
             <p><span className='small-gray'>Culoare - {product.color}</span></p>
           </div>
-          <div className='util-item'>
-            <p><span className='small-gray'>Marime: </span></p>
-            <CustomSelect options={product.size} setSelectedResult={setSelectedSize} />
-          </div>
+          {product.size[0] !== "" &&
+            <div className='util-item'>
+              <p><span className='small-gray'>Marime: </span></p>
+              <CustomSelect options={product.size} setSelectedResult={setSelectedSize} />
+            </div>
+          }
           <div className='util-item'>
             <button className='btn' onClick={() => addToCart()}>Adauga in cos</button>
           </div>

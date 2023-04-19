@@ -1,0 +1,77 @@
+[
+    {
+        "language": "ro",
+        "input": "vara, haine de vara, imbracaminte vara",
+        "output": "Maieu, Pantaloni scurti, Tricouri, Rochii, Sandale, Espadrile"
+    },
+    {
+        "language": "ro",
+        "input": "primavara, haine de primavara, imbracaminte primavara",
+        "output": "Geci subtiri, Blugi, Pantaloni, Camasi, Fuste, Tricouri, Tenisi, Primavara"
+    },
+    {
+        "language": "ro",
+        "input": "accesorii de primavara, accesoriu de primavara",
+        "output": "accesoriu de primavara"
+    },
+    {
+        "language": "ro",
+        "input": "toamna, haine de toamna, imbracaminte toamna",
+        "output": "Geci, Pulovere, Pantaloni, Fuste, Tricouri, Cizme, Ghete"
+    },
+    {
+        "language": "ro",
+        "input": "iarna, haine de iarna, imbracaminte iarna",
+        "output": "Hanorace, Geci, Cizme de iarna, Fular, Palton, Manusi"
+    },
+    {
+        "language": "ro",
+        "input": "hanorac, hanorace, bluze groase",
+        "output": "Hanorace"
+    },
+    {
+        "language": "ro",
+        "input": "haine de iarna, haine groase, imbracaminte iarna",
+        "output": "Hanorace, Geaca, Palton"
+    },
+    {
+        "language": "ro",
+        "input": "blugi, pantaloni",
+        "output": "Pantaloni, Blugi, Pantaloni scurti"
+    },
+    {
+        "language": "ro",
+        "input": "tricouri",
+        "output": "Tricouri, Tricouri cu maneca lunga"
+    },
+    {
+        "language": "ro",
+        "input": "rochii",
+        "output": "Rochii, Rochii de seara, Rochii de vara, Rochii elegante"
+    },
+    {
+        "language": "ro",
+        "input": "incaltaminte",
+        "output": "Tenisi, Cizme, Sandale, Pantofi, Ghete, Espadrile"
+    },
+    {
+        "language": "ro",
+        "input": "fuste",
+        "output": "Fuste, Fuste scurte, Fuste lungi, Fuste plisate"
+    },
+    {
+        "language": "ro",
+        "input": "geci, geaca",
+        "output": "Geci, Geci de ploaie, Geci de iarna, Geci de primavara"
+    },
+    {
+        "language": "ro",
+        "input": "camasi",
+        "output": "Camasi, Camasi elegante, Camasi casual"
+    },
+    {
+        "language": "ro",
+        "input": "pulovere",
+        "output": "Pulovere, Pulovere cu gluga, Pulovere tricotate"
+    }
+]
