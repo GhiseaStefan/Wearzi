@@ -1,0 +1,65 @@
+.PreviewAccount {
+    position: absolute;
+    width: 350px;
+    right: 0;
+    top: 0;
+    max-height: 500px;
+    overflow-y: auto;
+    margin-top: 20px;
+    user-select: none;
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    align-items: center;
+}
+
+.PreviewAccount a, .PreviewAccount button {
+    display: block;
+    border: 1px solid transparent;
+    background-color: #000;
+    border: 1px solid #000;
+    width: 80%;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 12px 32px;
+    cursor: pointer;
+    transition: all .3s ease;
+    margin-top: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.PreviewAccount a:first-child {
+    background-color: #ec555b;
+    border: 1px solid #ec555b;
+}
+
+.PreviewAccount a:first-child:hover {
+    background-color: #fff;
+    color: #ec555b;
+    border: 1px solid #ec555b;
+}
+
+.PreviewAccount a:last-child {
+    margin-bottom: 20px;
+}
+
+.PreviewAccount a:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.PreviewAccount button {
+    margin-bottom: 20px;
+    color: #777576;
+    background-color: #fff;
+    border: 1px solid #777576;
+}
+
+.PreviewAccount button:hover {
+    background-color: #777576;
+    color: #fff;
+}

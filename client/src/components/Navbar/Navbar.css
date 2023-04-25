@@ -179,13 +179,17 @@
     margin-left: -55px;
 }
 
+.Navbar .account {
+    position: relative;
+}
+
 .Navbar .account-link,
 .Navbar .shopping-cart {
     margin-left: 40px;
     position: relative;
 }
 
-.Navbar .shopping-cart > a,
+.Navbar .shopping-cart>a,
 .Navbar .account-link {
     color: #3d3d3d;
     font-size: 20px;
@@ -213,4 +217,20 @@
 
 .Navbar .shopping-cart:hover .PreviewCart {
     display: flex;
+}
+
+.Navbar .account:hover .PreviewAccount {
+    display: flex;
+}
+
+.Navbar .account-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.Navbar .account-link div {
+    font-size: 14px;
+    margin-top: 2px;
 }

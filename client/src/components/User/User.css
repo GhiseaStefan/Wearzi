@@ -1,0 +1,106 @@
+.User {
+    position: relative;
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+
+.User .container {
+    width: 600px;
+    border-radius: 5px;
+    padding: 4px
+}
+
+.User .switch-mode {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.User .switch-mode div {
+    padding: 8px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-bottom: 2px solid #ccc;
+    position: relative;
+}
+
+.User .switch-mode div:last-child::before {
+    content: '';
+    width: 2px;
+    height: 20px;
+    background-color: #ccc;
+    position: absolute;
+    left: 0;
+}
+
+.User .switch-mode .switch-mode-active {
+    border-bottom: 2px solid #ec555b;
+}
+
+.User form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.User .form-item {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.User label {
+    color: #000;
+    display: block;
+    line-height: 2;
+}
+
+.User .form-item input {
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 0 10px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #777576;
+    font-size: 14px;
+}
+
+.User .form-item input:focus {
+    outline: 1px solid #000;
+}
+
+.User input[type='submit'] {
+    width: 80%;
+    border: 1px solid transparent;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 12px 32px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.User input[type='submit']:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.User .container a {
+    display: flex;
+    margin-top: 10px;
+    color: #000;
+    justify-content: center;
+}
+
+.User .error {
+    margin-top: 10px;
+    color: #fff;
+    background-color: #ec555b;
+    padding: 8px 16px;
+    border-radius: 5px;
+}

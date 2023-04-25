@@ -7,8 +7,9 @@ import PreviewCart from '../Cart/PreviewCart'
 import fetchCategories from '../App/generalFunctions/fetchCategories'
 import totalCantitate from '../Cart/functions/totalCantitate'
 import SearchResults from './SearchResults'
+import PreviewAccount from './PreviewAccount'
 
-const Navbar = ({ cartItems }) => {
+const Navbar = ({ cartItems, loggedIn, setLoggedIn, user }) => {
   const SERVER = 'http://localhost:8123'
   const [categories, setCategories] = useState({})
   const [searchMessage, setSearchMessage] = useState('')
@@ -56,9 +57,13 @@ const Navbar = ({ cartItems }) => {
               <input type="search" placeholder='Cauta articole...' value={searchMessage} onChange={(e) => setSearchMessage(e.target.value)} />
               <input type="submit" value='' />
             </form>
-            <a href='/' className='account-link'>
-              <i className="fa-regular fa-user"></i>
-            </a>
+            <div className='account'>
+              <a href='/account' className='account-link'>
+                <i className="fa-regular fa-user"></i>
+                {loggedIn && <div>{user.prenume}</div>}
+              </a>
+              <PreviewAccount loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+            </div>
             <div className='shopping-cart'>
               <a href='/shoppingCart'>
                 <i className="fa-solid fa-cart-shopping"></i>

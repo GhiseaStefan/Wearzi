@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 
 import './App.css'
 import "@fontsource/poppins";
@@ -18,6 +18,9 @@ import fetchProductTypes from './generalFunctions/fetchProductTypes'
 import fetchCategories from './generalFunctions/fetchCategories';
 import fetchProducts from './generalFunctions/fetchProducts';
 import storageChangeMultipleTabs from './functions/storageChangeMultipleTabs';
+import Register from '../User/Register';
+import Login from '../User/Login';
+import Account from '../User/Account';
 
 const App = () => {
   const [categories, setCategories] = useState({})
@@ -67,6 +70,9 @@ const App = () => {
       }),
       ...Object.values(products).map((p) => `/products/${p._id}`),
       '/shoppingCart',
+      '/register',
+      '/login',
+      '/account',
       '/admin'
     ];
 
@@ -78,12 +84,49 @@ const App = () => {
     }
     return (
       <>
-        <Navbar cartItems={cartItems} />
+        <Navbar cartItems={cartItems} loggedIn={loggedIn} setLoggedIn={setLoggedIn} user={user} />
         {children}
         <Footer />
       </>
     )
   }
+
+  // user mode
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState({});
+
+  const checkLoggedIn = async () => {
+    const SERVER = 'http://localhost:8123';
+    try {
+      const response = await fetch(`${SERVER}/user/auth`, {
+        method: 'GET',
+        credentials: 'include',
+      });
+
+      if (response.status === 200) {
+        const data = await response.json();
+        setUser(data.user);
+        setLoggedIn(true);
+      } else if (response.status === 401) {
+        setLoggedIn(false);
+        setUser({});
+      } else {
+        setLoggedIn(false);
+        setUser({});
+        console.error(`Unexpected status code: ${response.status}`);
+      }
+    } catch (error) {
+      setLoggedIn(false);
+      setUser({});
+      console.error('Error fetching auth status:', error);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    checkLoggedIn()
+  }, []);
 
   return (
     <div className='App'>
@@ -118,6 +161,18 @@ const App = () => {
               return <Route key={p._id} path={`/products/${p._id}`} element={<ProductPage product={p} cartItems={cartItems} setCartItems={setCartItems} />} />
             })}
             <Route path='/shoppingCart' element={<ShoppingCart cartItems={cartItems} setCartItems={setCartItems} />} />
+            <Route path='/register' element={<Register setLoggedIn={setLoggedIn} />} />
+            <Route path='/login' element={<Login setLoggedIn={setLoggedIn} />} />
+            {loggedIn ?
+              <>
+                <Route path='/account' element={<Account user={user} />} />
+              </>
+              :
+              !loading &&
+              <>
+                <Route path='/account' element={<Navigate replace to='/login' />} />
+              </>
+            }
             <Route path='/admin' element={<AddProductTemp />} />
           </Routes>
         </Layout>

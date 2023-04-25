@@ -1,4 +1,10 @@
-Pornire user mode
+# User
+Inregistrare: Email, Prenume, Nume, Parola
+Cont campuri bonus: 
+    Nr telefon
+    Zi de nastere
+    Adresa (Judet, Oras, Strada, Nr casa/apartament, Cod Postal)
+
 
 
 
@@ -10,6 +16,7 @@ Pornire user mode
     De modificat CategoryPage eventual
     De aranjat trainingData
     Fixeaza sa nu apara nimic cand nu adaugi marime pentru anumite obiecte
+    Legatura intre Shopping Cart si Account
 ## Navbar
     De facut navbaru sa dispara / apara cand scrollezi
     Umblat la navbar pentru categorii tip categorie 1 cu text sau tip categorie 2 cu imagini
