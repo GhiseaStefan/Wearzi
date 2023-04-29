@@ -28,9 +28,6 @@ app.use('/products', productsRoute);
 app.use('/suggestions', suggestionsRoute);
 app.use('/user', userRoute);
 
-const createDatasetRoute = require('./_test/createDatasetRoute');
-app.use('/_test', createDatasetRoute);
-
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });

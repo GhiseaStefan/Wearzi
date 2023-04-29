@@ -1,8 +1,5 @@
 # User
-Recuperare parola cu email
 Legatura intre Shopping Cart si Account
-
-
 
 
 # Activitati de efectuat mult mai tarziu

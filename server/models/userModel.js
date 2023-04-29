@@ -44,7 +44,13 @@ const User = mongoose.Schema({
     },
     cod_postal: {
         type: String,
-    }
+    },
+    resetPasswordToken: {
+        type: String,
+    },
+    resetPasswordExpires: {
+        type: Date,
+    },
 });
 
 module.exports = mongoose.model('User', User);

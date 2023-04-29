@@ -62,7 +62,7 @@ const Login = ({ setLoggedIn }) => {
           <input type='submit' value='Intra in cont' />
           {error && <div className='error'>{error}</div>}
         </form>
-        <a href='/'>Mi-am uitat parola</a>
+        <a href='/forgotPassword'>Mi-am uitat parola</a>
       </div>
     </div>
   )

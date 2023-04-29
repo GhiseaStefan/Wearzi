@@ -21,6 +21,8 @@ import storageChangeMultipleTabs from './functions/storageChangeMultipleTabs';
 import Register from '../User/Register';
 import Login from '../User/Login';
 import Account from '../User/Account';
+import ResetPassword from '../ResetPassword/ResetPassword';
+import ForgotPassword from '../ResetPassword/ForgotPassword';
 
 const App = () => {
   const [categories, setCategories] = useState({})
@@ -73,13 +75,16 @@ const App = () => {
       '/register',
       '/login',
       '/account',
-      '/admin'
+      '/forgotPassword',
+      '/resetPassword/*',
+      '/admin',
     ];
 
-    if (!definedPaths.includes(pathname)) {
+    const wildcardPatterns = [/^\/resetPassword\/.+/];
+    if (!definedPaths.includes(pathname) && !wildcardPatterns.some((pattern) => pattern.test(pathname))) {
       return <NotFound />;
     }
-    if (pathname === '/admin') {
+    if (pathname === '/admin' || /^\/resetPassword\/.+/.test(pathname) || pathname === '/forgotPassword') {
       return <>{children}</>
     }
     return (
@@ -173,6 +178,8 @@ const App = () => {
                 <Route path='/account' element={<Navigate replace to='/login' />} />
               </>
             }
+            <Route path='/forgotPassword' element={<ForgotPassword />} />
+            <Route path='/resetPassword/:token' element={<ResetPassword />} />
             <Route path='/admin' element={<AddProductTemp />} />
           </Routes>
         </Layout>

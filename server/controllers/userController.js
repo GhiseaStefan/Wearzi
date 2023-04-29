@@ -1,38 +1,42 @@
+require('dotenv').config();
 const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const crypto = require('crypto');
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const { validateEmail, validatePhoneNumber, validatePostalCode } = require('./utils');
 
 const registerUser = async (req, res) => {
     try {
         const { email, password, nume, prenume } = req.body;
         if (email.length === 0) {
-            return res.status(400).json({ message: 'You need to add an email' })
+            return res.status(400).json({ message: 'Trebuie sa adaugi un email' })
         }
         if (!validateEmail(email)) {
-            return res.status(400).json({ message: 'This email is not a valid format' })
+            return res.status(400).json({ message: 'Acest email nu are un format valid' })
         }
         const oldUser = await User.findOne({ 'email': email })
         if (oldUser) {
-            return res.status(400).json({ message: 'Email is already used' })
+            return res.status(400).json({ message: 'Email-ul este deja folosit' })
         }
         if (nume.length === 0) {
-            return res.status(400).json({ message: 'You need to add a nume' })
+            return res.status(400).json({ message: 'Trebuie sa adaugi un nume' })
         }
         if (prenume.length === 0) {
-            return res.status(400).json({ message: 'You need to add a prenume' })
+            return res.status(400).json({ message: 'Trebuie sa adaugi un prenume' })
         }
         if (password.length === 0) {
-            return res.status(400).json({ message: 'You need to add a password' })
+            return res.status(400).json({ message: 'Trebuie sa adaugi o parola' })
         }
         if (password.length < 8) {
-            return res.status(400).json({ message: 'Password must contain 8 characters' })
+            return res.status(400).json({ message: 'Parola trebuie sa contina minim 8 caractere' })
         }
         if (!(/[A-Z]/.test(password))) {
-            return res.status(400).json({ message: 'Password must contain 1 uppercase character' })
+            return res.status(400).json({ message: 'Parola trebuie sa contina un caracter majuscule' })
         }
         if (!(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(password))) {
-            return res.status(400).json({ message: 'Password must contain 1 special character' })
+            return res.status(400).json({ message: 'Parola trebuie sa contina un caracter special' })
         }
         encryptedPassword = await bcrypt.hash(password, 10)
         const newUser = await User.create({ email: email.toLowerCase(), password: encryptedPassword, nume: nume, prenume: prenume })
@@ -42,10 +46,10 @@ const registerUser = async (req, res) => {
         }
         const options = { expiresIn: '1h' }
         const token = jwt.sign(payload, process.env.SECRET_KEY, options)
-        return res.cookie('auth-token', token, { httpOnly: true, sameSite: 'strict' }).status(201).json({ message: 'Registration complete!' });
+        return res.cookie('auth-token', token, { httpOnly: true, sameSite: 'strict' }).status(201).json({ message: 'Inregistrare completa!' });
     } catch (err) {
         console.warn(err)
-        return res.status(500).json({ message: 'Server error when creating user' })
+        return res.status(500).json({ message: 'Eroare de server la creearea utilizatorului' })
     }
 }
 
@@ -53,20 +57,20 @@ const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body
         if (email.length === 0) {
-            return res.status(400).json({ message: 'You need to add an email' })
+            return res.status(400).json({ message: 'Email-ul este deja folosit' })
         }
         if (!validateEmail(email)) {
-            return res.status(400).json({ message: 'This email is not a valid format' })
+            return res.status(400).json({ message: 'Acest email nu are un format valid' })
         }
         const user = await User.findOne({ 'email': email.toLowerCase() })
         if (!user) {
-            return res.status(400).json({ message: "Email doesn't exist" })
+            return res.status(400).json({ message: "Email-ul nu exista" })
         }
         if (password.length === 0) {
-            return res.status(400).json({ message: 'You need to add a password' })
+            return res.status(400).json({ message: 'Trebuie sa adaugi o parola' })
         }
         if (!(await bcrypt.compare(password, user.password))) {
-            return res.status(400).json({ message: 'Incorrect password' })
+            return res.status(400).json({ message: 'Parola incorecta' })
         }
         const payload = {
             _id: user._id,
@@ -77,7 +81,7 @@ const loginUser = async (req, res) => {
         return res.cookie('auth-token', token, { httpOnly: true, sameSite: 'strict' }).status(200).json({ message: 'Logged in successfully!' });
     } catch (err) {
         console.warn(err)
-        return res.status(500).json({ message: 'Server error when logging user' })
+        return res.status(500).json({ message: 'Eroare de server la logarea utilizatorului' })
     }
 }
 
@@ -94,18 +98,18 @@ const authUser = async (req, res) => {
 
         const user = await User.findById(req.userId);
         if (!user) {
-            return res.status(404).json({ message: 'User not found' });
+            return res.status(404).json({ message: 'Utilizatorul nu a fost gasit' });
         }
 
-        return res.status(200).json({ message: 'You are logged in!', user: user });
+        return res.status(200).json({ message: 'Te-ai logat cu succes', user: user });
     } catch (err) {
-        return res.status(403).json({ message: 'Invalid token' });
+        return res.status(403).json({ message: 'Token invalid' });
     }
 }
 
 const logoutUser = async (req, res) => {
     res.clearCookie('auth-token');
-    return res.status(200).json({ message: 'Logged out successfully!' });
+    return res.status(200).json({ message: 'Logout realizat cu succes' });
 }
 
 const modifyUser = async (req, res) => {
@@ -164,8 +168,87 @@ const modifyUser = async (req, res) => {
         return res.status(200).json({ message: 'User-ul a fost modificat cu success' });
     } catch (err) {
         console.warn(err);
-        return res.status(500).json({ message: 'Server error when modifying user data' });
+        return res.status(500).json({ message: 'Eroare de server la modificarea datelor utilizatorului' });
     }
 };
 
-module.exports = { registerUser, loginUser, authUser, logoutUser, modifyUser };
+const forgotPasswordUser = async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        const user = await User.findOne({ email: email.toLowerCase() });
+
+        if (!user) {
+            return res.status(404).json({ message: 'E-mailul nu a fost gasit' });
+        }
+
+        const token = crypto.randomBytes(20).toString('hex');
+
+        user.resetPasswordToken = token;
+        user.resetPasswordExpires = Date.now() + 3600000;
+
+        await user.save();
+
+        const msg = {
+            to: user.email,
+            from: 'clothingwearzi@gmail.com',
+            subject: 'Resetare parola',
+            text: `Pentru a reseta parola, acceseaza urmatorul link:\nhttp://localhost:3000/resetPassword/${token}`,
+        };
+
+        await sgMail.send(msg);
+        return res.status(200).json({ message: 'E-mailul de resetare a parolei a fost trimis' });
+    } catch (error) {
+        return res.status(500).json({ message: 'A apărut o eroare.', err: error });
+    }
+}
+
+const resetPasswordUser = async (req, res) => {
+    const { token } = req.params;
+    const { password } = req.body;
+
+    try {
+        const user = await User.findOne({
+            resetPasswordToken: token,
+            resetPasswordExpires: { $gt: Date.now() },
+        });
+
+        if (!user) {
+            return res.status(400).json({ message: 'Token invalid sau expirat' });
+        }
+
+        if (password.length === 0) {
+            return res.status(400).json({ message: 'Trebuie sa adaugi o parola' })
+        }
+        if (password.length < 8) {
+            return res.status(400).json({ message: 'Parola trebuie sa contina minim 8 caractere' })
+        }
+        if (!(/[A-Z]/.test(password))) {
+            return res.status(400).json({ message: 'Parola trebuie sa contina un caracter majuscule' })
+        }
+        if (!(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(password))) {
+            return res.status(400).json({ message: 'Parola trebuie sa contina un caracter special' })
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+        user.password = hashedPassword;
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpires = undefined;
+
+        await user.save();
+
+        const msg = {
+            to: user.email,
+            from: 'clothingwearzi@gmail.com',
+            subject: 'Parola a fost resetata',
+            text: 'Parola pentru contul tau a fost resetata cu succes.',
+        };
+
+        await sgMail.send(msg);
+        return res.status(200).json({ message: 'Parola a fost resetată cu succes.' });
+    } catch (error) {
+        return res.status(500).json({ message: 'A apărut o eroare.' });
+    }
+}
+
+module.exports = { registerUser, loginUser, authUser, logoutUser, modifyUser, forgotPasswordUser, resetPasswordUser };

@@ -54,8 +54,8 @@ const AccountData = ({ user }) => {
           window.location.href = '/account';
         }
 
-      } catch (error) {
-        console.error(error);
+      } catch (err) {
+        console.warn(err);
       }
     } else {
       setErrors((prevErrors) => ({
