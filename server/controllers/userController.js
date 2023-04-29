@@ -1,14 +1,7 @@
 const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-
-const validateEmail = (email) => {
-    return String(email)
-        .toLowerCase()
-        .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        );
-};
+const { validateEmail, validatePhoneNumber, validatePostalCode } = require('./utils');
 
 const registerUser = async (req, res) => {
     try {
@@ -115,4 +108,64 @@ const logoutUser = async (req, res) => {
     return res.status(200).json({ message: 'Logged out successfully!' });
 }
 
-module.exports = { registerUser, loginUser, authUser, logoutUser };
+const modifyUser = async (req, res) => {
+    try {
+        const { email, nume, prenume, telefon, zi_nastere, judet, oras, strada, nr_adresa, cod_postal, old_password, new_password } = req.body;
+        const errors = {};
+        if (!email) {
+            return res.status(400).json({ message: 'Email-ul este necesar pentru a modifica datele' })
+        }
+
+        const user = await User.findOne({ email: email.toLowerCase() });
+        if (!user) {
+            return res.status(400).json({ message: 'User-ul nu a fost gasit' })
+        }
+
+        const fields = [
+            { key: 'nume', value: nume },
+            { key: 'prenume', value: prenume },
+            { key: 'telefon', value: telefon, validate: validatePhoneNumber, errorMessage: 'Numarul de telefon nu este valid' },
+            { key: 'zi_nastere', value: zi_nastere },
+            { key: 'judet', value: judet },
+            { key: 'oras', value: oras },
+            { key: 'strada', value: strada },
+            { key: 'nr_adresa', value: nr_adresa },
+            { key: 'cod_postal', value: cod_postal, validate: validatePostalCode, errorMessage: 'Codul postal nu are un format valid' },
+        ];
+
+        for (const field of fields) {
+            if (field.value && field.value !== "") {
+                if (field.validate && !field.validate(field.value)) {
+                    errors[field.key] = field.errorMessage;
+                } else {
+                    user[field.key] = field.value;
+                }
+            }
+        }
+
+        if (new_password && new_password !== "") {
+            if (new_password.length < 8 || !(/[A-Z]/.test(new_password)) || !(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(new_password))) {
+                errors.new_password = 'Parola trebuie să conțină 8 caractere, 1 literă mare și 1 caracter special';
+            }
+            if (!(await bcrypt.compare(old_password, user.password))) {
+                errors.old_password = 'Parola actuala este incorecta';
+            } else {
+                const encryptedPassword = await bcrypt.hash(new_password, 10);
+                user.password = encryptedPassword;
+            }
+        }
+
+        if (Object.keys(errors).length > 0) {
+            return res.status(400).json({ errors });
+        }
+
+        await user.save();
+
+        return res.status(200).json({ message: 'User-ul a fost modificat cu success' });
+    } catch (err) {
+        console.warn(err);
+        return res.status(500).json({ message: 'Server error when modifying user data' });
+    }
+};
+
+module.exports = { registerUser, loginUser, authUser, logoutUser, modifyUser };

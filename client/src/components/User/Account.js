@@ -1,11 +1,10 @@
 import './Account.css'
+import AccountData from './AccountData'
 
 const Account = ({ user }) => {
   return (
     <div className='Account'>
-      <div>
-        {user.nume}<br></br>{user.prenume}<br></br>{user.email}
-      </div>
+      <AccountData user={user} />
     </div>
   )
 }

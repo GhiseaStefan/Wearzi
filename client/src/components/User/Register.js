@@ -38,7 +38,7 @@ const Register = ({ setLoggedIn }) => {
               response.json().then(res => {
                 setLoggedIn(true)
                 setError('');
-                window.location.href = '/account';
+                window.location.href = '/';
               });
             }
           })

@@ -1,9 +1,6 @@
 # User
-Inregistrare: Email, Prenume, Nume, Parola
-Cont campuri bonus: 
-    Nr telefon
-    Zi de nastere
-    Adresa (Judet, Oras, Strada, Nr casa/apartament, Cod Postal)
+Recuperare parola cu email
+Legatura intre Shopping Cart si Account
 
 
 
@@ -16,7 +13,11 @@ Cont campuri bonus:
     De modificat CategoryPage eventual
     De aranjat trainingData
     Fixeaza sa nu apara nimic cand nu adaugi marime pentru anumite obiecte
-    Legatura intre Shopping Cart si Account
+    Sa fac mock dat de comenzi
+    Abonare la newsletter
+    Sa ma focusez pe node-nlp si cautarea avansata, sa fac sa arate mai spectaculos pe site
+    Sa fac ceva ce utilizeaza anumiti algortimi pe langa node-nlp sa am ceva bonus, algoritmi existenti cunoscuti poate - sau DeepFashion TensorFlow recomandari de outfit-uri ?
+    Statistici / rapoarte pe comenzi efectuate
 ## Navbar
     De facut navbaru sa dispara / apara cand scrollezi
     Umblat la navbar pentru categorii tip categorie 1 cu text sau tip categorie 2 cu imagini
@@ -42,3 +43,6 @@ Referire clase in css: .ComponentClass .normal-class
 Node/Vanilla js file: 4 spaces indentation
 
 Denumire pentru produse: Cea simpla folosita de cropp
+
+# Info
+Poti avea Route in Route
