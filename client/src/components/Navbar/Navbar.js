@@ -26,7 +26,7 @@ const Navbar = ({ cartItems, loggedIn, setLoggedIn, user }) => {
     e.preventDefault();
     if (!searchMessage) return;
 
-    const response = await fetch(`${SERVER}/suggestions`, {
+    const response = await fetch(`${SERVER}/advancedSearch`, {
       method: 'POST',
       body: JSON.stringify({ searchMessage }),
       headers: { 'Content-Type': 'application/json' }
@@ -51,6 +51,9 @@ const Navbar = ({ cartItems, loggedIn, setLoggedIn, user }) => {
                 categoryRefs={categoryRefs}
               />
             ))}
+            <li className='Category'>
+              <a href='/intelligentSuggestion' className='category-name'>Recomandare Inteligenta</a>
+            </li>
           </ul>
           <div className='util'>
             <form className='search-form' onSubmit={handleSubmit}>

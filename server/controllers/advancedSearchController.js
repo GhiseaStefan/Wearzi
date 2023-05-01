@@ -21,7 +21,7 @@ const shuffleArray = (array) => {
     }
 }
 
-const handleChat = async (req, res) => {
+const advSearch = async (req, res) => {
     try {
         const { searchMessage } = req.body;
         const response = await manager.process('ro', searchMessage);
@@ -58,4 +58,4 @@ const handleChat = async (req, res) => {
     }
 }
 
-module.exports = { handleChat }
+module.exports = { advSearch }

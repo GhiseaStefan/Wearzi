@@ -1,0 +1,76 @@
+.IntelligentSuggestion {
+    margin-top: 100px;
+    display: flex;
+}
+
+.IntelligentSuggestion .buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.IntelligentSuggestion input[type=button] {
+    display: block;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 12px 32px;
+    width: 288px;
+    cursor: pointer;
+    transition: all .3s ease;
+    margin: 20px;
+}
+
+.IntelligentSuggestion input[type=button]:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.IntelligentSuggestion input[type="file"] {
+    display: none;
+}
+
+.IntelligentSuggestion .custom-file-upload {
+    border: 1px solid #000;
+    display: inline-block;
+    cursor: pointer;
+    color: #000;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 12px 32px;
+    width: 288px;
+    text-align: center;
+}
+
+.IntelligentSuggestion .buttons-container img {
+    margin-top: 20px;
+}
+
+.IntelligentSuggestion .suggestions-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 600px;
+    margin-top: 20px;
+}
+
+.IntelligentSuggestion img {
+    width: 288px;
+    height: 384px;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+
+.IntelligentSuggestion img:last-child {
+    margin-right: 0;
+}
+
+.IntelligentSuggestion .empty-suggestions {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

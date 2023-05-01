@@ -29,22 +29,9 @@ const Category = ({ category, categoryRefs }) => {
             onMouseOver={() => handleHover(category._id, 'over', categoryRefs)}
             onMouseOut={() => handleHover(category._id, 'out', categoryRefs)}
           >
-            {(category._id === '6405fa546fb18bc74bd3d9cb' || category._id === '640601ffbab3fa741b0ade07') ?
-              <>
-                {Object.values(subcategories).map(s => (
-                  <Subcategory key={s._id} category={category} subcategory={s} />
-                ))}
-              </>
-              :
-              <>
-                {Object.values(subcategories).map(s => (
-                  <div key={s._id} className='dropdown-subcategory-2'>
-                    <h2 className='subcategory-2-name'>{s.subcategory_name}</h2>
-                    <img src={`/images/noutati/${s._id}.jpg`} alt={s.subcategory_name} />
-                  </div>
-                ))}
-              </>
-            }
+            {Object.values(subcategories).map(s => (
+              <Subcategory key={s._id} category={category} subcategory={s} />
+            ))}
           </div>
         </li>
       }

@@ -23,6 +23,7 @@ import Login from '../User/Login';
 import Account from '../User/Account';
 import ResetPassword from '../ResetPassword/ResetPassword';
 import ForgotPassword from '../ResetPassword/ForgotPassword';
+import IntelligentSuggestion from '../IntelligentSuggestion/IntelligentSuggestion';
 
 const App = () => {
   const [categories, setCategories] = useState({})
@@ -77,6 +78,7 @@ const App = () => {
       '/account',
       '/forgotPassword',
       '/resetPassword/*',
+      '/intelligentSuggestion',
       '/admin',
     ];
 
@@ -139,8 +141,12 @@ const App = () => {
         <Layout>
           <Routes>
             <Route path='/' element={<Homepage />} />
-            <Route path='/barbati' element={<CategoryPage categoryId='6405fa546fb18bc74bd3d9cb' productType1='Blugi' productType2='Hanorace' />} />
-            <Route path='/femei' element={<CategoryPage categoryId='640601ffbab3fa741b0ade07' productType1='Fuste' productType2='Genti' />} />
+            <Route path='/barbati' element={
+              <CategoryPage category={categories['6405fa546fb18bc74bd3d9cb']} subcategory1='Imbracaminte' productType1='Blugi' subcategory2='Imbracaminte' productType2='Hanorace' />}
+            />
+            <Route path='/femei' element={
+              <CategoryPage category={categories['640601ffbab3fa741b0ade07']} subcategory1='Imbracaminte' productType1='Fuste' subcategory2='Accesorii' productType2='Genti' />}
+            />
             {Object.values(subcategories).map((s) => {
               if (s.category_id === '6405fa546fb18bc74bd3d9cb' || s.category_id === '640601ffbab3fa741b0ade07') {
                 return <Route
@@ -180,6 +186,7 @@ const App = () => {
             }
             <Route path='/forgotPassword' element={<ForgotPassword />} />
             <Route path='/resetPassword/:token' element={<ResetPassword />} />
+            <Route path='/intelligentSuggestion' element={<IntelligentSuggestion />} />
             <Route path='/admin' element={<AddProductTemp />} />
           </Routes>
         </Layout>

@@ -1,5 +1,9 @@
 # User
 Legatura intre Shopping Cart si Account
+Dat de comenzi mock, daca esti logat
+Istoric comenzi
+IntelligentSuggestion sa fie valabil doar daca ai cont
+IntelligentSuggestion sa dai click pe produse sa te duca la pagina lor
 
 
 # Activitati de efectuat mult mai tarziu
@@ -7,19 +11,8 @@ Legatura intre Shopping Cart si Account
     Sa adaug display:none la produsele care au cantitate 0.
     Standardizarea si polisharea in fisierele css
     De completat 404 not found
-    De modificat CategoryPage eventual
-    De aranjat trainingData
     Fixeaza sa nu apara nimic cand nu adaugi marime pentru anumite obiecte
-    Sa fac mock dat de comenzi
-    Abonare la newsletter
-    Sa ma focusez pe node-nlp si cautarea avansata, sa fac sa arate mai spectaculos pe site
-    Sa fac ceva ce utilizeaza anumiti algortimi pe langa node-nlp sa am ceva bonus, algoritmi existenti cunoscuti poate - sau DeepFashion TensorFlow recomandari de outfit-uri ?
-    Statistici / rapoarte pe comenzi efectuate
-## Navbar
-    De facut navbaru sa dispara / apara cand scrollezi
-    Umblat la navbar pentru categorii tip categorie 1 cu text sau tip categorie 2 cu imagini
-## Noutati Category
-    Il fac ulterior dupa ce am inceput sa populez site-ul cu produse
+    Sa imbunatatesc node-nlp - De aranjat trainingData
 
 
 # Project Standardization

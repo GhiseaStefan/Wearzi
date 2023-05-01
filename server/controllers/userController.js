@@ -57,7 +57,7 @@ const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body
         if (email.length === 0) {
-            return res.status(400).json({ message: 'Email-ul este deja folosit' })
+            return res.status(400).json({ message: 'Trebue sa adaugi un email' })
         }
         if (!validateEmail(email)) {
             return res.status(400).json({ message: 'Acest email nu are un format valid' })
