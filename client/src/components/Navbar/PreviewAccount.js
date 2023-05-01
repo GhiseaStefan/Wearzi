@@ -1,5 +1,3 @@
-import { useNavigate } from 'react-router-dom';
-
 import './PreviewAccount.css'
 
 const PreviewAccount = ({ loggedIn, setLoggedIn }) => {

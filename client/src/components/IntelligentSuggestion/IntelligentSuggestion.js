@@ -64,9 +64,9 @@ const IntelligentSuggestion = () => {
           <>
             {suggestions.map((o, index) => (
               <div key={index}>
-                {o[0] && <img src={`${SERVER}/images/products/${o[0]._id}/img1.jpg`} alt='' />}
-                {o[1] && <img src={`${SERVER}/images/products/${o[1]._id}/img1.jpg`} alt='' />}
-                {o[2] && <img src={`${SERVER}/images/products/${o[2]._id}/img1.jpg`} alt='' />}
+                {o[0] && <a href={`/products/${o[0]._id}`}><img src={`${SERVER}/images/products/${o[0]._id}/img1.jpg`} alt='' /></a>}
+                {o[1] && <a href={`/products/${o[1]._id}`}><img src={`${SERVER}/images/products/${o[1]._id}/img1.jpg`} alt='' /></a>}
+                {o[2] && <a href={`/products/${o[2]._id}`}><img src={`${SERVER}/images/products/${o[2]._id}/img1.jpg`} alt='' /></a>}
               </div>
             ))}
           </>

@@ -1,14 +1,9 @@
-# User
-IntelligentSuggestion sa fie valabil doar daca ai cont
-IntelligentSuggestion sa dai click pe produse sa te duca la pagina lor
-
-
 # Activitati de efectuat mult mai tarziu
 ## General
     Sa adaug display:none la produsele care au cantitate 0.
     Standardizarea si polisharea in fisierele css
     De completat 404 not found
-    Fixeaza sa nu apara nimic cand nu adaugi marime pentru anumite obiecte
+    Fixeaza sa nu apara nimic cand nu adaugi marime pentru anumite produse (accesorii)
     Sa imbunatatesc node-nlp - De aranjat trainingData
 
 

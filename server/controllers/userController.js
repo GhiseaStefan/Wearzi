@@ -256,21 +256,23 @@ const updateCart = async (req, res) => {
     try {
         const { userId, cartItems } = req.body;
 
-        const user = await User.findById(userId);
-        if (!user) {
-            return res.status(400).json({ message: 'User-ul nu a fost gasit' })
+        const updatedUser = await User.findOneAndUpdate(
+            { _id: userId },
+            { cartItems: Object.values(cartItems) },
+            { new: true }
+        );
+
+        if (!updatedUser) {
+            return res.status(400).json({ message: 'User-ul nu a fost gasit' });
         }
-
-        user.cartItems = Object.values(cartItems);
-
-        await user.save();
 
         return res.status(200).json({ message: 'Cosul de cumparaturi a fost actualizat cu success' });
     } catch (err) {
         console.warn(err);
         return res.status(500).json({ message: 'Eroare de server la modificarea cosului de cumparaturi' });
     }
-}
+};
+
 
 const getCart = async (req, res) => {
     try {

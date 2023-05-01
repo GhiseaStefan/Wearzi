@@ -51,7 +51,7 @@ const AccountData = ({ user }) => {
           const errorData = await response.json();
           setErrors(errorData.errors);
         } else {
-          window.location.href = '/account';
+          window.location.href = '/account/accountData';
         }
 
       } catch (err) {

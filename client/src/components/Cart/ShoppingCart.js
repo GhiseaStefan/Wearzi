@@ -50,7 +50,7 @@ const ShoppingCart = ({ cartItems, setCartItems, loggedIn, user }) => {
             <div className='items'>
               <div className='header'>{totalCantitate(cartItems)} produse</div>
               {Object.values(cartItems).map(ci => (
-                <div className='item'>
+                <div className='item' key={ci._id}>
                   <div className='item-image'>
                     <img src={`${SERVER}/images/products/${ci._id}/img1.jpg`} alt='' />
                   </div>

@@ -177,13 +177,13 @@ const App = () => {
   }, [cartItems]);
 
   useEffect(() => {
-    if (loggedIn) {
+    if (loggedIn && user._id) {
       getUserCart().then((userCartItems) => {
         const combinedCartItems = { ...cartItems, ...userCartItems };
         setCartItems(combinedCartItems);
       });
     }
-  }, [loggedIn]);
+  }, [loggedIn, user]);
 
 
   // User Cart
@@ -230,16 +230,17 @@ const App = () => {
             {loggedIn ?
               <>
                 <Route path='/account/*' element={<Account user={user} />} />
+                <Route path='/intelligentSuggestion' element={<IntelligentSuggestion />} />
               </>
               :
               !loading &&
               <>
                 <Route path='/account/*' element={<Navigate replace to='/login' />} />
+                <Route path='/intelligentSuggestion' element={<Navigate replace to='/login' />} />
               </>
             }
             <Route path='/forgotPassword' element={<ForgotPassword />} />
             <Route path='/resetPassword/:token' element={<ResetPassword />} />
-            <Route path='/intelligentSuggestion' element={<IntelligentSuggestion />} />
             <Route path='/admin' element={<AddProductTemp />} />
           </Routes>
         </Layout>

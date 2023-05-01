@@ -58,15 +58,18 @@
     margin-top: 20px;
 }
 
+.IntelligentSuggestion a {
+    margin-right: 50px;
+}
+
+.IntelligentSuggestion a:last-child {
+    margin-right: 0;
+}
+
 .IntelligentSuggestion img {
     width: 288px;
     height: 384px;
-    margin-right: 50px;
     border-radius: 5px;
-}
-
-.IntelligentSuggestion img:last-child {
-    margin-right: 0;
 }
 
 .IntelligentSuggestion .empty-suggestions {
