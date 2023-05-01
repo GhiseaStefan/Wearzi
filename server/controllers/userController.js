@@ -1,5 +1,6 @@
 require('dotenv').config();
 const User = require('../models/userModel');
+const { Product } = require('../models/productModel');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
@@ -294,4 +295,66 @@ const getCart = async (req, res) => {
     }
 }
 
-module.exports = { registerUser, loginUser, authUser, logoutUser, modifyUser, forgotPasswordUser, resetPasswordUser, updateCart, getCart };
+const formatDate = (date) => {
+    const adjustedDate = new Date(date.getTime() + 7200000);
+
+    const options = {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+    };
+
+    return new Intl.DateTimeFormat('ro-RO', options).format(adjustedDate);
+};
+
+
+const discountedPrice = (price, discount) => {
+    return (price - price * discount).toFixed(2)
+}
+
+const sendOrder = async (req, res) => {
+    try {
+        const { userId, cartItems } = req.body;
+
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(400).json({ message: 'User-ul nu a fost gasit' })
+        }
+
+        const order_total = cartItems.reduce((total, item) => {
+            const itemPrice = item.discount !== 0 ? discountedPrice(item.price, item.discount) : item.price;
+            return total + itemPrice * item.quantity;
+        }, 0);
+
+        const newOrder = {
+            order_number: user.orders.length + 1,
+            order_date: formatDate(new Date()),
+            order_total: order_total,
+            order_products: cartItems
+        };
+
+        user.orders.push(newOrder);
+
+        for (const item of cartItems) {
+            const product = await Product.findById(item._id);
+
+            if (product) {
+                product.quantity -= item.quantity;
+                await product.save();
+            } else {
+                return res.status(404).json({ message: 'Produsul nu a fost gasit' });
+            }
+        }
+
+        await user.save();
+
+        return res.status(200).json({ message: 'Comanda a fost trimisa cu succes', order: newOrder });
+    } catch (err) {
+        return res.status(500).json({ message: 'A aparut o eroare la trimiterea comenzii', error: err.message });
+    }
+}
+
+module.exports = { registerUser, loginUser, authUser, logoutUser, modifyUser, forgotPasswordUser, resetPasswordUser, updateCart, getCart, sendOrder };

@@ -3,9 +3,11 @@ import './ShoppingCart.css'
 import totalCantitate from './functions/totalCantitate'
 import totalPret from './functions/totalPret'
 import discountedPrice from './functions/discountedPrice'
+import { useState } from 'react'
 
-const ShoppingCart = ({ cartItems, setCartItems }) => {
+const ShoppingCart = ({ cartItems, setCartItems, loggedIn, user }) => {
   const SERVER = 'http://localhost:8123'
+  const [error, setError] = useState('')
 
   const removeFromCart = (productCartId) => {
     const updatedCartItems = { ...cartItems };
@@ -13,6 +15,32 @@ const ShoppingCart = ({ cartItems, setCartItems }) => {
     setCartItems(updatedCartItems);
     localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
   }
+
+  const handleSendOrder = async () => {
+    if (loggedIn) {
+      try {
+        const response = await fetch(`${SERVER}/user/sendOrder`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', },
+          body: JSON.stringify({
+            userId: user._id,
+            cartItems: Object.values(cartItems),
+          }),
+        });
+
+        if (response.ok) {
+          setCartItems({});
+          localStorage.setItem("cartItems", JSON.stringify({}));
+          setError('');
+        }
+
+      } catch (err) {
+        console.warn(`Eroare la trimiterea comenzii: ${err.message}`);
+      }
+    } else {
+      setError('Trebuie sa va autentificati pentru a trimite comanda')
+    }
+  };
 
   return (
     <div className='ShoppingCart'>
@@ -50,11 +78,12 @@ const ShoppingCart = ({ cartItems, setCartItems }) => {
               <p>Pretul Total: {totalPret(cartItems).toFixed(2)} RON</p>
               <p>Livrare: 0 RON</p>
               <p className='bold'>Total cu TVA: {totalPret(cartItems).toFixed(2)} RON</p>
-              <div className='btn btn-attention'>Finalizeaza comanda</div>
+              <div className='btn btn-attention' onClick={handleSendOrder}>Finalizeaza comanda</div>
               <div className='cupon-container'>
                 <input type='text' placeholder='Adauga cupon' />
                 <div className='btn'>Adauga</div>
               </div>
+              {error && <div className='error'>{error}</div>}
             </div>
           </div>
         </>

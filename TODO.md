@@ -1,7 +1,4 @@
 # User
-Legatura intre Shopping Cart si Account
-Dat de comenzi mock, daca esti logat
-Istoric comenzi
 IntelligentSuggestion sa fie valabil doar daca ai cont
 IntelligentSuggestion sa dai click pe produse sa te duca la pagina lor
 

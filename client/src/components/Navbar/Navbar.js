@@ -61,7 +61,7 @@ const Navbar = ({ cartItems, loggedIn, setLoggedIn, user }) => {
               <input type="submit" value='' />
             </form>
             <div className='account'>
-              <a href='/account' className='account-link'>
+              <a href='/account/accountData' className='account-link'>
                 <i className="fa-regular fa-user"></i>
                 {loggedIn && <div>{user.prenume}</div>}
               </a>

@@ -110,7 +110,7 @@
 
 .ShoppingCart .info-finalizing {
     width: 30%;
-    max-height: 300px;
+    max-height: 320px;
     overflow-y: auto;
     position: fixed;
     top: 120px;
@@ -182,4 +182,13 @@
     flex-direction: column;
     margin-top: 200px;
     min-height: calc(100vh - 900px);
+}
+
+.ShoppingCart .error {
+    background-color: #ec555b;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 4px 8px;
+    margin-bottom: 10px;
 }

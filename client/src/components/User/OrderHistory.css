@@ -1,0 +1,67 @@
+.OrderHistory {
+    width: 1000px;
+    background-color: #f4f4f4;
+    min-height: 500px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.OrderHistory .order-container {
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.OrderHistory .order {
+    padding: 10px;
+}
+
+.OrderHistory h2 {
+    font-weight: normal;
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.OrderHistory h4 {
+    font-weight: normal;
+    font-size: 14px;
+    color: #777576;
+}
+
+.OrderHistory .products-container {
+    display: flex;
+}
+
+.OrderHistory .products-container .image-container {
+    width: 120px;
+    height: 120px;
+}
+
+.OrderHistory .products-container .image-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.OrderHistory .product {
+    display: flex;
+    margin-top: 20px;
+}
+
+.OrderHistory .product-info-container {
+    line-height: 2;
+    margin-left: 10px;
+    width: 150px;
+}
+
+.OrderHistory .empty-orders {
+    font-size: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+}

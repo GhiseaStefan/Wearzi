@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const { ProductSchema } = require('./productModel');
+const { OrderSchema } = require('./orderModel');
 
 const User = mongoose.Schema({
     email: {
@@ -56,6 +57,10 @@ const User = mongoose.Schema({
         type: [ProductSchema],
         default: []
     },
+    orders: {
+        type: [OrderSchema],
+        default: []
+    }
 });
 
 module.exports = mongoose.model('User', User);

@@ -3,4 +3,29 @@
     margin-top: 120px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+}
+
+.Account .side-bar-container {
+    flex: 0.5;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.Account .side-bar {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 8px 16px;
+}
+
+.Account .side-bar .item {
+    font-size: 18px;
+    padding: 4px 8px;
+    border-bottom: 2px solid transparent;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.Account .side-bar .item:hover {
+    border-bottom: 2px solid #000;
 }

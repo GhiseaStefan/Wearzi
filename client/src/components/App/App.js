@@ -75,9 +75,10 @@ const App = () => {
       '/shoppingCart',
       '/register',
       '/login',
-      '/account',
       '/forgotPassword',
       '/resetPassword/*',
+      '/account/accountData',
+      '/account/orderHistory',
       '/intelligentSuggestion',
       '/admin',
     ];
@@ -223,17 +224,17 @@ const App = () => {
             {Object.values(products).length !== 0 && Object.values(products).map(p => {
               return <Route key={p._id} path={`/products/${p._id}`} element={<ProductPage product={p} cartItems={cartItems} setCartItems={setCartItems} />} />
             })}
-            <Route path='/shoppingCart' element={<ShoppingCart cartItems={cartItems} setCartItems={setCartItems} />} />
+            <Route path='/shoppingCart' element={<ShoppingCart cartItems={cartItems} setCartItems={setCartItems} loggedIn={loggedIn} user={user} />} />
             <Route path='/register' element={<Register setLoggedIn={setLoggedIn} />} />
             <Route path='/login' element={<Login setLoggedIn={setLoggedIn} />} />
             {loggedIn ?
               <>
-                <Route path='/account' element={<Account user={user} />} />
+                <Route path='/account/*' element={<Account user={user} />} />
               </>
               :
               !loading &&
               <>
-                <Route path='/account' element={<Navigate replace to='/login' />} />
+                <Route path='/account/*' element={<Navigate replace to='/login' />} />
               </>
             }
             <Route path='/forgotPassword' element={<ForgotPassword />} />
