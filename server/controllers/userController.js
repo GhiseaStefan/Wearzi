@@ -251,4 +251,47 @@ const resetPasswordUser = async (req, res) => {
     }
 }
 
-module.exports = { registerUser, loginUser, authUser, logoutUser, modifyUser, forgotPasswordUser, resetPasswordUser };
+const updateCart = async (req, res) => {
+    try {
+        const { userId, cartItems } = req.body;
+
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(400).json({ message: 'User-ul nu a fost gasit' })
+        }
+
+        user.cartItems = Object.values(cartItems);
+
+        await user.save();
+
+        return res.status(200).json({ message: 'Cosul de cumparaturi a fost actualizat cu success' });
+    } catch (err) {
+        console.warn(err);
+        return res.status(500).json({ message: 'Eroare de server la modificarea cosului de cumparaturi' });
+    }
+}
+
+const getCart = async (req, res) => {
+    try {
+        const { userId } = req.query;
+
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(400).json({ message: 'User-ul nu a fost gasit' })
+        }
+
+        const cartItemsBefore = user.cartItems;
+
+        const cartItems = cartItemsBefore.reduce((acc, item) => {
+            acc[item._id.toString()] = item;
+            return acc;
+        }, {});
+
+        return res.status(200).json({ cartItems })
+    } catch (err) {
+        console.warn(err);
+        return res.status(500).json({ message: 'Eroare de server la obtinerea cosului de cumparaturi' });
+    }
+}
+
+module.exports = { registerUser, loginUser, authUser, logoutUser, modifyUser, forgotPasswordUser, resetPasswordUser, updateCart, getCart };

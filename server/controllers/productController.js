@@ -2,7 +2,7 @@ const multer = require('multer')
 const path = require('path')
 const fs = require('fs')
 const mongoose = require('mongoose');
-const Product = require('../models/productModel');
+const { Product } = require('../models/productModel');
 
 const getProducts = async (req, res) => {
     try {

@@ -135,6 +135,58 @@ const App = () => {
     checkLoggedIn()
   }, []);
 
+  // User Cart
+  const updateUserCart = async (updatedCartItems) => {
+    if (loggedIn) {
+      try {
+        const SERVER = 'http://localhost:8123';
+        const response = await fetch(`${SERVER}/user/updateCart`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userId: user._id,
+            cartItems: updatedCartItems
+          })
+        });
+      } catch (err) {
+        console.warn(err);
+      }
+    }
+  }
+
+  const getUserCart = async () => {
+    if (loggedIn) {
+      try {
+        const SERVER = 'http://localhost:8123';
+        const response = await fetch(`${SERVER}/user/updateCart?userId=${user._id}`);
+        const data = await response.json();
+        if (response.status === 200) {
+          const userCartItems = data.cartItems;
+          return userCartItems;
+        }
+      } catch (err) {
+        console.warn(err);
+      }
+    }
+    return {};
+  }
+
+  useEffect(() => {
+    updateUserCart(cartItems);
+  }, [cartItems]);
+
+  useEffect(() => {
+    if (loggedIn) {
+      getUserCart().then((userCartItems) => {
+        const combinedCartItems = { ...cartItems, ...userCartItems };
+        setCartItems(combinedCartItems);
+      });
+    }
+  }, [loggedIn]);
+
+
+  // User Cart
+
   return (
     <div className='App'>
       {isDataLoaded &&

@@ -14,6 +14,7 @@ const PreviewAccount = ({ loggedIn, setLoggedIn }) => {
 
       if (response.ok) {
         setLoggedIn(false);
+        localStorage.setItem("cartItems", JSON.stringify({}));
         window.location.href = '/';
       } else {
         console.error('Logout error:', response.statusText);

@@ -1,6 +1,6 @@
 const { NlpManager } = require('node-nlp');
 const fs = require('fs');
-const Product = require('../models/productModel');
+const { Product } = require('../models/productModel');
 
 const manager = new NlpManager({ languages: ['ro'] });
 

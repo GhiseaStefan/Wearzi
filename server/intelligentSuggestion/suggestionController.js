@@ -4,7 +4,7 @@ const path = require('path');
 const multer = require('multer');
 const sharp = require('sharp');
 const ProductType = require('../models/productTypeModel');
-const Product = require('../models/productModel');
+const { Product } = require('../models/productModel');
 
 const IMAGE_SIZE = 224;
 

@@ -2,7 +2,7 @@ const tf = require('@tensorflow/tfjs-node');
 const fs = require('fs');
 const path = require('path');
 const ProductType = require('../models/productTypeModel');
-const Product = require('../models/productModel');
+const { Product } = require('../models/productModel');
 
 const IMAGE_SIZE = 224;
 const EPOCHS = 30;

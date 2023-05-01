@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const { ProductSchema } = require('./productModel');
 
 const User = mongoose.Schema({
     email: {
@@ -50,6 +51,10 @@ const User = mongoose.Schema({
     },
     resetPasswordExpires: {
         type: Date,
+    },
+    cartItems: {
+        type: [ProductSchema],
+        default: []
     },
 });
 
