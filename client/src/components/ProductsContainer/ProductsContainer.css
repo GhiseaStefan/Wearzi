@@ -12,6 +12,8 @@
     height: 100%;
     background-color: #f4f4f4;
     margin-top: -20px;
+    display: flex;
+    justify-content: center;
 }
 
 .VerticalNavBar ul {
@@ -36,7 +38,7 @@
 }
 
 .VerticalNavBar .subcategory-list {
-    margin-left: 20px;
+    margin-top: 10px;
 }
 
 .VerticalNavBar .subcategory-list > li {
