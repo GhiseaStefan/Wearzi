@@ -1,0 +1,25 @@
+.FilterBar {
+    margin-bottom: 20px;
+}
+
+/* .FilterBar .form-container {
+
+} */
+
+.FilterBar form {
+    display: flex;
+    justify-content:space-between;
+}
+
+.FilterBar .form-item {
+    margin-right: 10px;
+}
+
+.FilterBar .form-item:last-child {
+    margin-right: 0;
+}
+
+.FilterBar .form-item div {
+    margin-top: 5px;
+    width: 200px;
+}

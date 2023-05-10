@@ -11,12 +11,11 @@ const AdminContent = () => {
     <div className='AdminContent'>
       <div className='side-bar-container'>
         <div className='side-bar'>
-          <div className='item'>
-            <h2>Subcategorii</h2>
+        <div className='item'>
+            <h2>Produse</h2>
             <div className='subitem'>
-              <h3>Vizualizare Subcategorii</h3>
-              <h3>Adaugare Subcategorii</h3>
-              <h3>Modificare Subcategorii</h3>
+              <h3 onClick={() => navigate('/admin/content/viewProducts')}>Vizualizare Produse</h3>
+              <h3 onClick={() => navigate('/admin/content/addProducts')}>Adaugare Produse</h3>
             </div>
           </div>
           <div className='item'>
@@ -28,11 +27,11 @@ const AdminContent = () => {
             </div>
           </div>
           <div className='item'>
-            <h2>Produse</h2>
+            <h2>Subcategorii</h2>
             <div className='subitem'>
-              <h3 onClick={() => navigate('/admin/content/viewProducts')}>Vizualizare Produse</h3>
-              <h3 onClick={() => navigate('/admin/content/addProducts')}>Adaugare Produse</h3>
-              <h3>Modificare Produse</h3>
+              <h3>Vizualizare Subcategorii</h3>
+              <h3>Adaugare Subcategorii</h3>
+              <h3>Modificare Subcategorii</h3>
             </div>
           </div>
         </div>

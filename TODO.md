@@ -1,10 +1,13 @@
 # Activitati de efectuat mult mai tarziu
 ## General
-    Sa adaug display:none la produsele care au cantitate 0.
-    Standardizarea si polisharea in fisierele css
     De completat 404 not found
-    Fixeaza sa nu apara nimic cand nu adaugi marime pentru anumite produse (accesorii)
-    Sa imbunatatesc node-nlp - De aranjat trainingData
+    Sa imbunatatesc node-nlp: aranjat trainingData, descriere produse
+    Admin: Tipuri de produse, Subcategorii
+    Adaugate tipuri de produse femei, barbati si haine in plus
+    Modifica css navbar, footer
+    Recomandare inteligenta sa poti sa dai click pe imagine si doar 3 seturi vizibile
+    Schimbare cele 2 modele de pe carousel in ceva mai potrivit
+    
 
 
 # Project Standardization
@@ -27,6 +30,4 @@ Node/Vanilla js file: 4 spaces indentation
 Denumire pentru produse: Cea simpla folosita de cropp
 
 # Info
-Poti avea Route in Route
-Nu este necesar sa fac responsive
-Culoare noua: rgb(85, 236, 123)
+Culoare noua: rgb(85, 236, 173)

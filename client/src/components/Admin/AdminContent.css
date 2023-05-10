@@ -1,6 +1,6 @@
 .AdminContent {
     position: relative;
-    margin-top: 120px;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -14,13 +14,15 @@
 }
 
 .AdminContent .side-bar {
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
     border-radius: 5px;
     padding: 8px 16px;
+    border: 1px solid #000;
 }
 
 .AdminContent .side-bar .item {
     margin-top: 25px;
+    /* border: 1px solid rgb(85, 236, 173); */
 }
 
 .AdminContent .side-bar .item:first-child {
@@ -28,7 +30,7 @@
 }
 
 .AdminContent .side-bar .item h2 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: normal;
     border-bottom: 2px solid #000;
     display: inline-block;
@@ -39,10 +41,20 @@
 }
 
 .AdminContent .side-bar .subitem h3 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: normal;
     cursor: pointer;
     margin-top: 10px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all .1s ease;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.AdminContent .side-bar .subitem h3:hover {
+    background-color: #000;
+    color: #fff;
 }
 
 .AdminContent .content {

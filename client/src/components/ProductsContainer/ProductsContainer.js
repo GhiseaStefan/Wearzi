@@ -49,12 +49,23 @@ const ProductsContainer = ({ containerType, category, subcategory, productType }
 
   useEffect(() => {
     if (containerType === 'Subcategory') {
-      fetchProductsBySubcategory(subcategory._id).then(p => { setProducts(p); setIsDataLoaded(true); })
+      fetchProductsBySubcategory(subcategory._id)
+        .then((p) => {
+          const filteredProducts = Object.values(p).filter((product) => product.quantity > 0);
+          setProducts(Object.fromEntries(filteredProducts.map(product => [product._id, product])));
+          setIsDataLoaded(true);
+        });
     }
     if (containerType === 'ProductType') {
-      fetchProductsByProductType(productType._id).then(p => { setProducts(p); setIsDataLoaded(true); })
+      fetchProductsByProductType(productType._id)
+        .then((p) => {
+          const filteredProducts = Object.values(p).filter((product) => product.quantity > 0);
+          setProducts(Object.fromEntries(filteredProducts.map(product => [product._id, product])));
+          setIsDataLoaded(true);
+        });
     }
-  }, [])
+  }, []);
+
 
   useEffect(() => {
     setMarimi(loadMarimi(products))
@@ -79,7 +90,7 @@ const ProductsContainer = ({ containerType, category, subcategory, productType }
     <>
       {isDataLoaded &&
         <div className='ProductsContainer'>
-          <VerticalNavBar category={category} subcategory={subcategory} productType={productType}/>
+          <VerticalNavBar category={category} subcategory={subcategory} productType={productType} />
           <div className='products-container-content'>
             <div className='edit-bar'>
               <div className='edit-item' ref={barRefs.sortareRef}>

@@ -60,8 +60,8 @@ const Admin = () => {
             <>
               <>
                 <Route path='content/*' element={<AdminContent />} />
-                <Route path='login' element={<Navigate replace to='/admin/content/addProducts' />} />
-                <Route path='content' element={<Navigate replace to='/admin/content/addProducts' />} />
+                <Route path='login' element={<Navigate replace to='/admin/content/viewProducts' />} />
+                <Route path='content' element={<Navigate replace to='/admin/content/viewProducts' />} />
               </>
             </>
             :
