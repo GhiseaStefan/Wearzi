@@ -225,12 +225,30 @@ const updateProduct = async (req, res) => {
     }
 };
 
+const deleteProductImages = async (productId) => {
+    const imageDir = `public/images/products/${productId}`;
+
+    try {
+        const files = await fs.promises.readdir(imageDir);
+
+        for (const file of files) {
+            await fs.promises.unlink(`${imageDir}/${file}`);
+        }
+
+        await fs.promises.rmdir(imageDir);
+    } catch (err) {
+        console.warn(err);
+    }
+};
+
 const deleteProduct = async (req, res) => {
     try {
         const product = await Product.findById(req.params.id);
         if (!product) {
             return res.status(404).json({ message: 'Product not found' });
         }
+
+        await deleteProductImages(product._id.toString());
         await product.remove();
         return res.status(200).json({ message: 'Product deleted' });
     } catch (err) {

@@ -11,7 +11,6 @@ import ProductsContainer from '../ProductsContainer/ProductsContainer';
 import ProductPage from '../ProductPage/ProductPage';
 import Footer from '../Footer/Footer'
 import ShoppingCart from '../Cart/ShoppingCart';
-import AddProductTemp from '../Admin/AddProductTemp';
 import NotFound from '../NotFound/NotFound';
 import fetchSubcategories from './generalFunctions/fetchSubcategories'
 import fetchProductTypes from './generalFunctions/fetchProductTypes'
@@ -24,6 +23,7 @@ import Account from '../User/Account';
 import ResetPassword from '../ResetPassword/ResetPassword';
 import ForgotPassword from '../ResetPassword/ForgotPassword';
 import IntelligentSuggestion from '../IntelligentSuggestion/IntelligentSuggestion';
+import Admin from '../Admin/Admin';
 
 const App = () => {
   const [categories, setCategories] = useState({})
@@ -80,14 +80,15 @@ const App = () => {
       '/account/accountData',
       '/account/orderHistory',
       '/intelligentSuggestion',
-      '/admin',
+      '/admin/*',
     ];
 
     const wildcardPatterns = [/^\/resetPassword\/.+/];
-    if (!definedPaths.includes(pathname) && !wildcardPatterns.some((pattern) => pattern.test(pathname))) {
+    const wildcardPatterns2 = [/^\/admin\/.+/];
+    if (!definedPaths.includes(pathname) && !wildcardPatterns.some((pattern) => pattern.test(pathname)) && !wildcardPatterns2.some((pattern) => pattern.test(pathname))) {
       return <NotFound />;
     }
-    if (pathname === '/admin' || /^\/resetPassword\/.+/.test(pathname) || pathname === '/forgotPassword') {
+    if (/^\/admin\/.+/.test(pathname) || /^\/resetPassword\/.+/.test(pathname) || pathname === '/forgotPassword') {
       return <>{children}</>
     }
     return (
@@ -241,7 +242,7 @@ const App = () => {
             }
             <Route path='/forgotPassword' element={<ForgotPassword />} />
             <Route path='/resetPassword/:token' element={<ResetPassword />} />
-            <Route path='/admin' element={<AddProductTemp />} />
+            <Route path='/admin/*' element={<Admin />} />
           </Routes>
         </Layout>
       }

@@ -1,0 +1,58 @@
+.AdminSelect {
+    position: relative;
+    width: 292px;
+}
+
+.AdminSelect .custom-select-header {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    padding: 6px 30px 6px 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.AdminSelect .custom-select-header:after {
+    border: 6px solid transparent;
+    border-top-color: #333;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    z-index: -1;
+}
+
+.AdminSelect .custom-select-options {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: none;
+    list-style: none;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.AdminSelect .custom-select-options.open {
+    display: block;
+}
+
+.AdminSelect .custom-option {
+    color: #333;
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+.AdminSelect .custom-option:hover {
+    background-color: rgb(85, 236, 173);
+    color: #000;
+}

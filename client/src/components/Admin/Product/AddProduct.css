@@ -1,0 +1,111 @@
+.AddProduct {
+    position: relative;
+    right: 10%;
+}
+
+.AddProduct .form-container {
+    width: 700px;
+    border-radius: 5px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.AddProduct form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AddProduct .form-item {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.AddProduct .form-item-pair {
+    display: flex;
+    align-items: center;
+}
+
+.AddProduct .pair {
+    margin-right: 50px;
+}
+
+.AddProduct .pair:last-child {
+    margin-right: 0;
+}
+
+.AddProduct .form-item label {
+    color: #000;
+    display: block;
+    line-height: 2;
+}
+
+.AddProduct .form-item input[type=text] {
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 0 10px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #777576;
+    font-size: 14px;
+}
+
+.AddProduct .form-item input[type=text]:focus {
+    outline: 1px solid #000;
+}
+
+.AddProduct input[type=file] {
+    display: none;
+}
+
+.AddProduct .custom-file-upload {
+    margin-bottom: -10px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background-color: rgb(85, 236, 173);
+    border-radius: 5px;
+    color: #777576;
+    font-size: 18px;
+    display: inline-block;
+    cursor: pointer;
+    width: 292px;
+    text-align: center;
+}
+
+.AddProduct input[type=submit] {
+    width: 292px;
+    border: 1px solid transparent;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 12px 32px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.AddProduct input[type=submit]:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.AddProduct .preview-images {
+    width: 80px;
+    height: 80px;
+}
+
+.AddProduct .img-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.AddProduct .preview-images img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 5px;
+}

@@ -1,0 +1,71 @@
+.Admin {
+    position: relative;
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+
+.Admin .container {
+    width: 600px;
+    border-radius: 5px;
+    padding: 4px
+}
+
+.Admin form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Admin .form-item {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.Admin label {
+    color: #000;
+    display: block;
+    line-height: 2;
+}
+
+.Admin .form-item input {
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 0 10px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #777576;
+    font-size: 14px;
+}
+
+.Admin .form-item input:focus {
+    outline: 1px solid #000;
+}
+
+.Admin input[type='submit'] {
+    width: 80%;
+    border: 1px solid transparent;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 12px 32px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.Admin input[type='submit']:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.Admin .error {
+    margin-top: 10px;
+    color: #fff;
+    background-color: #ec555b;
+    padding: 8px 16px;
+    border-radius: 5px;
+}

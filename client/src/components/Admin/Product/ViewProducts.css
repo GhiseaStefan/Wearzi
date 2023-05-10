@@ -1,0 +1,104 @@
+.ViewProducts {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    right: 10%;
+}
+
+/* .ViewProducts .products-container {
+
+} */
+
+.ViewProducts .product {
+    display: flex;
+    padding: 20px 60px 20px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+    max-width: 760px;
+}
+
+
+.ViewProducts .product:first-child {
+    margin-top: 0;
+}
+
+.ViewProducts .product .img-container {
+    width: 120px;
+    height: 120px;
+}
+
+.ViewProducts .product .img-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.ViewProducts .info {
+    display: flex;
+    min-height: 120px;
+    margin-left: 20px;
+}
+
+/* .ViewProducts .info-1 {
+    
+} */
+
+.ViewProducts .info-2 {
+    margin-left: 50px;
+}
+
+.ViewProducts .info p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.ViewProducts .delete-item {
+    margin-top: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 20px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.ViewProducts .delete-item:before,
+.ViewProducts .delete-item:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    transform-origin: center center;
+}
+
+.ViewProducts .delete-item:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ViewProducts .delete-item:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.ViewProducts .edit-item {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}

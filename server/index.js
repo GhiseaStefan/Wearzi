@@ -11,6 +11,7 @@ const productsRoute = require('./routes/productsRoute');
 const advancedSearchRoute = require('./routes/advancedSearchRoute');
 const userRoute = require('./routes/userRoute');
 const suggestionRoute = require('./intelligentSuggestion/suggestionRoute');
+const adminRoute = require('./routes/adminRoute');
 
 const port = process.env.PORT || 8123;
 const app = express();
@@ -29,6 +30,7 @@ app.use('/products', productsRoute);
 app.use('/advancedSearch', advancedSearchRoute);
 app.use('/user', userRoute);
 app.use('/suggestion', suggestionRoute);
+app.use('/admin', adminRoute);
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

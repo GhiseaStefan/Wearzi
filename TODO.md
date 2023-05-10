@@ -29,3 +29,4 @@ Denumire pentru produse: Cea simpla folosita de cropp
 # Info
 Poti avea Route in Route
 Nu este necesar sa fac responsive
+Culoare noua: rgb(85, 236, 123)

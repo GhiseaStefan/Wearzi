@@ -70,7 +70,7 @@ const ProductPage = ({ product, cartItems, setCartItems }) => {
           <div className='util-item'>
             <p><span className='small-gray'>Culoare - {product.color}</span></p>
           </div>
-          {product.size[0] !== "" &&
+          {(product.size.length > 0) &&
             <div className='util-item'>
               <p><span className='small-gray'>Marime: </span></p>
               <CustomSelect options={product.size} setSelectedResult={setSelectedSize} />
