@@ -60,43 +60,43 @@ const ViewSingleProduct = ({ p, handleDelete }) => {
           {editMode ?
             <div className='info-item-edit'>
               <label>product_name: </label>
-              <input type='text' name='product_name' value={productData.product_name} onChange={handleChange}></input>
+              <input type='text' name='product_name' value={productData.product_name} onChange={handleChange}/>
             </div> : <div className='info-item-normal'><p>product_name: {productData.product_name}</p></div>
           }
           {editMode ?
             <div className='info-item-edit'>
               <label>price: </label>
-              <input type='text' name='price' value={productData.price} onChange={handleChange}></input>
+              <input type='text' name='price' value={productData.price} onChange={handleChange}/>
             </div> : <div className='info-item-normal'><p>price: {productData.price}</p></div>
           }
           {editMode ?
             <div className='info-item-edit'>
               <label>quantity: </label>
-              <input type='text' name='quantity' value={productData.quantity} onChange={handleChange}></input>
+              <input type='text' name='quantity' value={productData.quantity} onChange={handleChange}/>
             </div> : <div className='info-item-normal'><p>quantity: {productData.quantity}</p></div>
           }
           {editMode ?
             <div className='info-item-edit'>
               <label>discount: </label>
-              <input type='text' name='discount' value={productData.discount} onChange={handleChange}></input>
+              <input type='text' name='discount' value={productData.discount} onChange={handleChange}/>
             </div> : <div className='info-item-normal'><p>discount: {productData.discount}</p></div>
           }
           {editMode ?
             <div className='info-item-edit'>
               <label>size: </label>
-              <input type='text' name='size' value={productData.size} onChange={handleChange}></input>
+              <input type='text' name='size' value={productData.size} onChange={handleChange}/>
             </div> : <div className='info-item-normal'><p>size: {productData.size && productData.size.join(', ')}</p></div>
           }
           {editMode ?
             <div className='info-item-edit'>
               <label>color: </label>
-              <input type='text' name='color' value={productData.color} onChange={handleChange}></input>
+              <input type='text' name='color' value={productData.color} onChange={handleChange}/>
             </div> : <div className='info-item-normal'><p>color: {productData.color}</p></div>
           }
           {editMode ?
             <div className='info-item-edit'>
               <label>description: </label>
-              <input type='text' name='description' value={productData.description} onChange={handleChange}></input>
+              <input type='text' name='description' value={productData.description} onChange={handleChange}/>
             </div> : <div className='info-item-normal'><p>description: {productData.description}</p></div>
           }
         </div>

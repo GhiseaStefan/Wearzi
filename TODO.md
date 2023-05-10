@@ -1,12 +1,15 @@
 # Activitati de efectuat mult mai tarziu
 ## General
+    Admin: Subcategorii, Utilizatori(si comenzi)
+    Adaugate tipuri de produse femei, barbati si haine in plus
     De completat 404 not found
     Sa imbunatatesc node-nlp: aranjat trainingData, descriere produse
-    Admin: Tipuri de produse, Subcategorii
-    Adaugate tipuri de produse femei, barbati si haine in plus
-    Modifica css navbar, footer
     Recomandare inteligenta sa poti sa dai click pe imagine si doar 3 seturi vizibile
+    Modifica css navbar, footer
     Schimbare cele 2 modele de pe carousel in ceva mai potrivit
+    Media queries pentru ecranu la mac
+    Stergere utilizatori vechi
+    Admin: Verificari la inputuri
     
 
 
