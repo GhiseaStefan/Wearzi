@@ -1,6 +1,8 @@
 const router = require('express').Router();
-const { registerUser, loginUser, authUser, logoutUser, modifyUser, forgotPasswordUser, resetPasswordUser, updateCart, getCart, sendOrder } = require('../controllers/userController');
+const { getUsers, deleteUser, registerUser, loginUser, authUser, logoutUser, modifyUser, forgotPasswordUser, resetPasswordUser, updateCart, getCart, sendOrder } = require('../controllers/userController');
 
+router.route('/').get(getUsers);
+router.route('/:id').delete(deleteUser);
 router.route('/register').post(registerUser);
 router.route('/login').post(loginUser);
 router.route('/auth').get(authUser);

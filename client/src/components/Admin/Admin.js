@@ -41,7 +41,10 @@ const Admin = () => {
       '/admin/content/addProducts',
       '/admin/content/viewProducts',
       '/admin/content/viewProductTypes',
-      '/admin/content/addProductTypes'
+      '/admin/content/addProductTypes',
+      '/admin/content/viewSubcategories',
+      '/admin/content/addSubcategories',
+      '/admin/content/viewUsers'
     ];
 
     if (!definedPaths.includes(pathname)) {

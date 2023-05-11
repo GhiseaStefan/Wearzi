@@ -8,6 +8,30 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const { validateEmail, validatePhoneNumber, validatePostalCode } = require('./utils');
 
+const getUsers = async (req, res) => {
+    try {
+        const users = await User.find();
+        return res.status(200).json(users);
+    } catch (err) {
+        console.warn(err);
+        return res.status(500).json({ message: 'Server error when getting all users' });
+    }
+}
+
+const deleteUser = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        await user.remove();
+        return res.status(200).json({ message: 'User deleted' });
+    } catch (err) {
+        console.warn(err);
+        return res.status(500).json({ message: 'Server error when deleting user' });
+    }
+}
+
 const registerUser = async (req, res) => {
     try {
         const { email, password, nume, prenume } = req.body;
@@ -359,4 +383,4 @@ const sendOrder = async (req, res) => {
     }
 }
 
-module.exports = { registerUser, loginUser, authUser, logoutUser, modifyUser, forgotPasswordUser, resetPasswordUser, updateCart, getCart, sendOrder };
+module.exports = { getUsers, deleteUser, registerUser, loginUser, authUser, logoutUser, modifyUser, forgotPasswordUser, resetPasswordUser, updateCart, getCart, sendOrder };

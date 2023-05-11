@@ -1,0 +1,64 @@
+.AddSubcategory {
+    position: relative;
+    right: 10%;
+}
+
+.AddSubcategory .form-container {
+    width: 700px;
+    border-radius: 5px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.AddSubcategory form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AddSubcategory .form-item {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.AddSubcategory .form-item label {
+    color: #000;
+    display: block;
+    line-height: 2;
+}
+
+.AddSubcategory .form-item input[type=text] {
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 0 10px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #777576;
+    font-size: 14px;
+    width: 292px;
+}
+
+.AddSubcategory .form-item input[type=text]:focus {
+    outline: 1px solid #000;
+}
+
+.AddSubcategory input[type=submit] {
+    width: 292px;
+    border: 1px solid transparent;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 12px 32px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.AddSubcategory input[type=submit]:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
