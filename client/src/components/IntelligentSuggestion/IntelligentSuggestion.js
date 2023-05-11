@@ -62,7 +62,7 @@ const IntelligentSuggestion = () => {
       <div className='suggestions-container'>
         {isDataLoaded ?
           <>
-            {suggestions.map((o, index) => (
+            {suggestions.slice(0, 3).map((o, index) => (
               <div key={index}>
                 {o[0] && <a href={`/products/${o[0]._id}`}><img src={`${SERVER}/images/products/${o[0]._id}/img1.jpg`} alt='' /></a>}
                 {o[1] && <a href={`/products/${o[1]._id}`}><img src={`${SERVER}/images/products/${o[1]._id}/img1.jpg`} alt='' /></a>}

@@ -12,7 +12,22 @@ const AddProductType = () => {
   const [productTypeName, setProductTypeName] = useState('');
 
   useEffect(() => {
-    fetchSubcategories().then(s => { setSubcategories(s); setSelectedSubcategory(Object.values(s)[0]._id) });
+    fetchSubcategories().then(s => {
+      const renamedSubcategories = Object.keys(s).reduce((result, key) => {
+        const updatedObject = { ...s[key] };
+        if (updatedObject.category_id === '6405fa546fb18bc74bd3d9cb') {
+          updatedObject.subcategory_name = `Barbati: ${updatedObject.subcategory_name}`;
+        }
+        if (updatedObject.category_id === '640601ffbab3fa741b0ade07') {
+          updatedObject.subcategory_name = `Femei: ${updatedObject.subcategory_name}`;
+        }
+        result[key] = updatedObject;
+        return result;
+      }, {});
+
+      setSubcategories(renamedSubcategories);
+      setSelectedSubcategory(Object.values(renamedSubcategories)[0]._id);
+    });
   }, []);
 
   const handleChange = (e) => {

@@ -7,10 +7,7 @@ import AdminSelect from '../AdminSelect';
 const AddProduct = () => {
   const [categories, setCategories] = useState({});
   const [productTypes, setProductTypes] = useState({});
-
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedProductType, setSelectedProductType] = useState('');
-  const [data, setData] = useState({
+  const INITIAL_DATA = {
     product_name: '',
     price: '',
     quantity: '',
@@ -20,7 +17,11 @@ const AddProduct = () => {
     description: ' ',
     images: [],
     nrImages: ''
-  });
+  };
+
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedProductType, setSelectedProductType] = useState('');
+  const [data, setData] = useState(INITIAL_DATA);
   const [imageUrls, setImageUrls] = useState([]);
 
   useEffect(() => {
@@ -98,17 +99,7 @@ const AddProduct = () => {
           body: formData
         });
         e.target.reset();
-        setData({
-          product_name: '',
-          price: '',
-          quantity: '',
-          discount: '',
-          size: [],
-          color: '',
-          description: ' ',
-          images: [],
-          nrImages: ''
-        });
+        setData(INITIAL_DATA);
         setImageUrls([]);
       } catch (err) {
         console.warn(err);
