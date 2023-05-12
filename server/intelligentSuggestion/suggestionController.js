@@ -105,7 +105,7 @@ const getSuggestion = async (req, res) => {
         const productTypes = await getProductTypes();
 
         const previousOutfitCombinations = new Set();
-        const uniqueOutfitCombinations = await getUniqueOutfitCombinations(productTypes, topIndices, previousOutfitCombinations);
+        const uniqueOutfitCombinations = await getUniqueOutfitCombinations(productTypes, topIndices, previousOutfitCombinations, 3);
 
         fs.unlinkSync(uploadedImagePath);
 

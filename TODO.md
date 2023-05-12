@@ -1,5 +1,4 @@
 # Taskuri
-    Adaugat produse femei ca la barbati x20:
     Sa imbunatatesc node-nlp: aranjat trainingData, descriere produse, adaugare produse in concordanta cu descrieri (multe categorii...)
     Reantrenat model tensor
     Facut subcategorie cu varietate pentru prezentare
@@ -12,6 +11,8 @@
     Admin: Stergi subcategorie -> Toate tipurile de produse -> Toate produsele
     Admin: Verificari la inputuri
     Adaugat produse din fiecare subcategorie pentru prezentare homepage finala
+    Cos: linia de la marime - cand nu e; produs cand e 1 si produse cand sunt mai multe
+    Cart multiple tabs delete repara
 
     
     

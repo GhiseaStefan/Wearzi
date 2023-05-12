@@ -5,7 +5,7 @@ const ProductType = require('../models/productTypeModel');
 const { Product } = require('../models/productModel');
 
 const IMAGE_SIZE = 224;
-const EPOCHS = 8;
+const EPOCHS = 12;
 
 const getProductTypes = async () => {
     const productTypes = await ProductType.find();
@@ -71,16 +71,13 @@ const loadDataset = async () => {
         const products = await productsByProductTypeName(productTypes[i]);
         for (const item of products) {
             const label = i;
-            const img1 = await loadImage(`${item._id}/img1.jpg`);
-            const img2 = await loadImage(`${item._id}/img2.jpg`);
-            const processedImg1 = img1.resizeNearestNeighbor([IMAGE_SIZE, IMAGE_SIZE]).toFloat().div(255);
-            const processedImg2 = img2.resizeNearestNeighbor([IMAGE_SIZE, IMAGE_SIZE]).toFloat().div(255);
-            data.push(processedImg1);
-            data.push(processedImg2);
-            img1.dispose();
-            img2.dispose();
-            labels.push(label);
-            labels.push(label);
+            for (let j = 1; j <= item.nrImages; j++) {
+                const img = await loadImage(`${item._id}/img${j}.jpg`);
+                const processedImg = img.resizeNearestNeighbor([IMAGE_SIZE, IMAGE_SIZE]).toFloat().div(255);
+                data.push(processedImg);
+                img.dispose();
+                labels.push(label);
+            }
         }
     }
 
