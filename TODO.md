@@ -1,5 +1,5 @@
 # Taskuri
-    Reantrenat model tensor
+    Reantrenat model tensor & imbunatatire obtinere produse in controller
     Facut subcategorie cu varietate pentru prezentare
     De completat 404 not found
     Modifica css navbar, footer
