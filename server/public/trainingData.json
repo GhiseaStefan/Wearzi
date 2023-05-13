@@ -1,77 +1,322 @@
 [
     {
         "language": "ro",
-        "input": "vara, haine de vara, imbracaminte vara",
-        "output": "Maieu, Pantaloni scurti, Tricouri, Rochii, Sandale, Espadrile"
+        "input": "blug, blugi",
+        "output": "Blugi"
     },
     {
         "language": "ro",
-        "input": "primavara, haine de primavara, imbracaminte primavara",
-        "output": "Geci subtiri, Blugi, Pantaloni, Camasi, Fuste, Tricouri, Tenisi, Primavara"
+        "input": "geaca, geci",
+        "output": "Geci"
     },
     {
         "language": "ro",
-        "input": "accesorii de primavara, accesoriu de primavara",
-        "output": "accesoriu de primavara"
+        "input": "geanta, genti",
+        "output": "Genti"
     },
     {
         "language": "ro",
-        "input": "toamna, haine de toamna, imbracaminte toamna",
-        "output": "Geci, Pulovere, Pantaloni, Fuste, Tricouri, Cizme, Ghete"
+        "input": "bijuterie, bijuterii",
+        "output": "Bijuterii"
     },
     {
         "language": "ro",
-        "input": "iarna, haine de iarna, imbracaminte iarna",
-        "output": "Hanorace, Geci, Cizme de iarna, Fular, Palton, Manusi"
+        "input": "rochie, rochii",
+        "output": "Rochii"
     },
     {
         "language": "ro",
-        "input": "hanorac, hanorace, bluze groase",
+        "input": "fusta, fuste",
+        "output": "Fuste"
+    },
+    {
+        "language": "ro",
+        "input": "hanorac, hanorace",
         "output": "Hanorace"
     },
     {
         "language": "ro",
-        "input": "haine de iarna, haine groase, imbracaminte iarna",
-        "output": "Hanorace, Geaca, Palton"
+        "input": "tricou, tricouri",
+        "output": "Tricouri"
     },
     {
         "language": "ro",
-        "input": "blugi, pantaloni",
-        "output": "Pantaloni, Blugi, Pantaloni scurti"
+        "input": "pantalon, pantaloni",
+        "output": "Pantaloni"
     },
     {
         "language": "ro",
-        "input": "tricouri",
-        "output": "Tricouri, Tricouri cu maneca lunga"
+        "input": "camasa, camasi",
+        "output": "Camasi"
     },
     {
         "language": "ro",
-        "input": "rochii",
-        "output": "Rochii, Rochii de seara, Rochii de vara, Rochii elegante"
+        "input": "bluza, bluze",
+        "output": "Bluze"
     },
     {
         "language": "ro",
-        "input": "incaltaminte",
-        "output": "Tenisi, Cizme, Sandale, Pantofi, Ghete, Espadrile"
+        "input": "pantofi sport, adidasi",
+        "output": "Pantofi Sport & Adidasi"
     },
     {
         "language": "ro",
-        "input": "fuste",
-        "output": "Fuste, Fuste scurte, Fuste lungi, Fuste plisate"
+        "input": "cizma, cizme",
+        "output": "Cizme"
     },
     {
         "language": "ro",
-        "input": "geci, geaca",
-        "output": "Geci, Geci de ploaie, Geci de iarna, Geci de primavara"
+        "input": "pantof, pantofi",
+        "output": "Pantofi"
     },
     {
         "language": "ro",
-        "input": "camasi",
-        "output": "Camasi, Camasi elegante, Camasi casual"
+        "input": "sandala, sandale",
+        "output": "Sandale"
     },
     {
         "language": "ro",
-        "input": "pulovere",
-        "output": "Pulovere, Pulovere cu gluga, Pulovere tricotate"
+        "input": "sapca, palarie, sepci, palarii",
+        "output": "Sepci & Palarii"
+    },
+    {
+        "language": "ro",
+        "input": "esarfa, esarfe",
+        "output": "Esarfe"
+    },
+    {
+        "language": "ro",
+        "input": "curea, curele",
+        "output": "Curele"
+    },
+    {
+        "language": "ro",
+        "input": "accesoriu de par, accesorii de par",
+        "output": "Accesorii de par"
+    },
+    {
+        "language": "ro",
+        "input": "bluza, camasa",
+        "output": "Bluze & Camasi"
+    },
+    {
+        "language": "ro",
+        "input": "pantaloni scurti",
+        "output": "Pantaloni Scurti"
+    },
+    {
+        "language": "ro",
+        "input": "pantofi sport, adidasi",
+        "output": "Pantofi Sport & Adidasi"
+    },
+    {
+        "language": "ro",
+        "input": "cizma, cizme",
+        "output": "Cizme"
+    },
+    {
+        "language": "ro",
+        "input": "toc, tocuri, tocuri inalte",
+        "output": "Tocuri & Tocuri Inalte"
+    },
+    {
+        "language": "ro",
+        "input": "Costum, Costume",
+        "output": "Costume"
+    },
+    {
+        "language": "ro",
+        "input": "Trening, Treninguri",
+        "output": "Treninguri"
+    },
+    {
+        "language": "ro",
+        "input": "Pelerina de ploaie, Pelerine de ploaie",
+        "output": "Pelerina de ploaie"
+    },
+    {
+        "language": "ro",
+        "input": "Produse pentru iarna",
+        "output": "Produse pentru iarna"
+    },
+    {
+        "language": "ro",
+        "input": "Articole pentru temperaturi scazute",
+        "output": "Articole pentru temperaturi scazute"
+    },
+    {
+        "language": "ro",
+        "input": "Produse pentru toamna",
+        "output": "Produse pentru toamna"
+    },
+    {
+        "language": "ro",
+        "input": "Produse groase",
+        "output": "Produse groase"
+    },
+    {
+        "language": "ro",
+        "input": "Produse pentru primavara",
+        "output": "Produse pentru primavara"
+    },
+    {
+        "language": "ro",
+        "input": "Articole pentru zile ploioase",
+        "output": "Articole pentru zile ploioase"
+    },
+    {
+        "language": "ro",
+        "input": "Ploaie",
+        "output": "Articole pentru zile ploioase"
+    },
+    {
+        "language": "ro",
+        "input": "Produse pentru vara",
+        "output": "Produse pentru vara"
+    },
+    {
+        "language": "ro",
+        "input": "Articole pentru temperaturi ridicate",
+        "output": "Articole pentru temperaturi ridicate"
+    },
+    {
+        "language": "ro",
+        "input": "Produse subtiri",
+        "output": "Produse subtiri"
+    },
+    {
+        "language": "ro",
+        "input": "Articole pentru zile insorite",
+        "output": "Articole pentru zile insorite"
+    },
+    {
+        "language": "ro",
+        "input": "Produse de sezon",
+        "output": "Produse de sezon"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru evenimente informale",
+        "output": "Haine pentru evenimente informale"
+    },
+    {
+        "language": "ro",
+        "input": "Haine de casa",
+        "output": "Haine de casa"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru acasa",
+        "output": "Haine pentru acasa"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru picnic",
+        "output": "Haine pentru picnic"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru festivaluri",
+        "output": "Haine pentru festivaluri"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru concerte",
+        "output": "Haine pentru concerte"
+    },
+    {
+        "language": "ro",
+        "input": "Haine calatorie",
+        "output": "Haine confortabile pentru calatorii"
+    },
+    {
+        "language": "ro",
+        "input": "Haine confortabile pentru calatorii",
+        "output": "Haine confortabile pentru calatorii"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru plimbari in natura",
+        "output": "Haine pentru plimbari in natura"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru drumetii",
+        "output": "Haine pentru drumetii"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru camping",
+        "output": "Haine pentru camping"
+    },
+    {
+        "language": "ro",
+        "input": "Haine elegante",
+        "output": "Haine pentru evenimente formale"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru evenimente formale",
+        "output": "Haine pentru evenimente formale"
+    },
+    {
+        "language": "ro",
+        "input": "Haine de ocazie",
+        "output": "Haine de ocazie"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru nunti",
+        "output": "Haine pentru nunti"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru botezuri",
+        "output": "Haine pentru botezuri"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru evenimente de gala",
+        "output": "Haine pentru evenimente de gala"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru petreceri, Haine pentru petrecere",
+        "output": "Haine pentru petreceri"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru club",
+        "output": "Haine pentru club"
+    },
+    {
+        "language": "ro",
+        "input": "Articole sportive, Haine de sport",
+        "output": "Articole sportive"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru activitati in aer liber",
+        "output": "Haine pentru activitati in aer liber"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru sporturi de iarna",
+        "output": "Haine pentru sporturi de iarna"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru sporturi de vara",
+        "output": "Haine pentru sporturi de vara"
+    },
+    {
+        "language": "ro",
+        "input": "Articole pentru fitness",
+        "output": "Articole pentru fitness"
+    },
+    {
+        "language": "ro",
+        "input": "Articole pentru yoga",
+        "output": "Articole pentru yoga"
     }
 ]

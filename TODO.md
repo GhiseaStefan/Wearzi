@@ -1,5 +1,4 @@
 # Taskuri
-    Sa imbunatatesc node-nlp: aranjat trainingData, descriere produse, adaugare produse in concordanta cu descrieri (multe categorii...)
     Reantrenat model tensor
     Facut subcategorie cu varietate pentru prezentare
     De completat 404 not found
@@ -13,7 +12,9 @@
     Adaugat produse din fiecare subcategorie pentru prezentare homepage finala
     Cos: linia de la marime - cand nu e; produs cand e 1 si produse cand sunt mai multe
     Cart multiple tabs delete repara
-
+    Sa incarci doar imagini jpg la tensorflow
+    Model produse descriere default ' '
+    Sa mut format de la orders din server la afisare si sa fac ma size sa nu mai apara " - " cand nu are
     
     
 

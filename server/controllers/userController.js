@@ -357,7 +357,7 @@ const sendOrder = async (req, res) => {
 
         const newOrder = {
             order_number: user.orders.length + 1,
-            order_date: formatDate(new Date()),
+            order_date: new Date(),
             order_total: order_total,
             order_products: cartItems
         };
