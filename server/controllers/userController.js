@@ -321,22 +321,6 @@ const getCart = async (req, res) => {
     }
 }
 
-const formatDate = (date) => {
-    const adjustedDate = new Date(date.getTime() + 7200000);
-
-    const options = {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-    };
-
-    return new Intl.DateTimeFormat('ro-RO', options).format(adjustedDate);
-};
-
-
 const discountedPrice = (price, discount) => {
     return (price - price * discount).toFixed(2)
 }

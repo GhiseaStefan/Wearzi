@@ -39,8 +39,13 @@ const IntelligentSuggestion = () => {
 
 
   const handleBaseImageChange = async (e) => {
-    setBaseImage(e.target.files[0]);
-    setUploadedImageUrl(URL.createObjectURL(e.target.files[0]));
+    const file = e.target.files[0];
+    if (file && file.type === 'image/jpeg') {
+      setBaseImage(file);
+      setUploadedImageUrl(URL.createObjectURL(file));
+    } else {
+      console.warn('Invalid file type. Please select a JPG file.');
+    }
   };
 
   useEffect(() => {
@@ -55,7 +60,7 @@ const IntelligentSuggestion = () => {
         <input type='button' onClick={handleClick} value='Obtine Sugestii' />
         <div>
           <label htmlFor="file-upload" className="custom-file-upload">Incarca Imagine</label>
-          <input id="file-upload" type="file" onChange={handleBaseImageChange} />
+          <input id="file-upload" type="file" accept=".jpg" onChange={handleBaseImageChange} />
         </div>
         {uploadedImageUrl !== '' && <img src={uploadedImageUrl} alt='' />}
       </div>

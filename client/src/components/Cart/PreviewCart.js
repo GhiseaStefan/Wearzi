@@ -9,7 +9,7 @@ const PreviewCart = ({ cartItems }) => {
 
   return (
     <div className={`PreviewCart ${totalCantitate(cartItems) !== 0 ? '' : 'preview-cart-empty'}`}>
-      <div className='header'>{totalCantitate(cartItems)} produse</div>
+      <div className='header'>{totalCantitate(cartItems)} {totalCantitate(cartItems) === 1 ? 'produs' : 'produse'}</div>
       <div className='mini-items'>
         {Object.values(cartItems).map(ci => (
           <div key={ci._id} className='item'>
@@ -18,7 +18,7 @@ const PreviewCart = ({ cartItems }) => {
             </div>
             <div className='item-info'>
               <p>{ci.product_name}</p>
-              <p>{ci.color} - {ci.size.join(', ')}</p>
+              <p>{ci.color} {ci.size[0] !== '' && `- ${ci.size.join(', ')}`}</p>
               <p>Cantitate: {ci.quantity}</p>
               {ci.discount === 0 ?
                 <p className='bold'>{(ci.price * ci.quantity).toFixed(2)} RON</p>

@@ -100,7 +100,7 @@ const getSuggestion = async (req, res) => {
         const model = await tf.loadLayersModel('file://intelligentSuggestion/model.json');
 
         const predictions = model.predict(inputData);
-        const topIndices = tf.topk(predictions, 5).indices.arraySync();
+        const topIndices = tf.topk(predictions, 3).indices.arraySync();
 
         const productTypes = await getProductTypes();
 

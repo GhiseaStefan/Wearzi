@@ -48,7 +48,7 @@ const ShoppingCart = ({ cartItems, setCartItems, loggedIn, user }) => {
         <>
           <div className='items-container'>
             <div className='items'>
-              <div className='header'>{totalCantitate(cartItems)} produse</div>
+              <div className='header'>{totalCantitate(cartItems)} {totalCantitate(cartItems) === 1 ? 'produs' : 'produse'}</div>
               {Object.values(cartItems).map(ci => (
                 <div className='item' key={ci._id}>
                   <div className='item-image'>
@@ -65,7 +65,7 @@ const ShoppingCart = ({ cartItems, setCartItems, loggedIn, user }) => {
                     }
                     <p>{ci.product_name}</p>
                     <p>Culoare: {ci.color}</p>
-                    <p>Marime: {ci.size.join(', ')}</p>
+                    {ci.size[0] !== '' && (<p>Marime: {ci.size.join(', ')}</p>)}
                     <p>Cantitate: {ci.quantity}</p>
                   </div>
                   <button onClick={() => removeFromCart(ci._id)}></button>

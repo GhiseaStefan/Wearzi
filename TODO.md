@@ -1,23 +1,13 @@
 # Taskuri
-    Reantrenat model tensor & imbunatatire obtinere produse in controller
-    Facut subcategorie cu varietate pentru prezentare
     De completat 404 not found
     Modifica css navbar, footer
-    Schimbare cele 2 modele de pe carousel in ceva mai potrivit
     Media queries pentru ecranu la mac
-    Admin: Utilizatori afisare comenzi
+    Adaugat produse din fiecare subcategorie pentru prezentare homepage finala
     Admin: Stergi tip produse -> Toate produsele de acel tip
     Admin: Stergi subcategorie -> Toate tipurile de produse -> Toate produsele
     Admin: Verificari la inputuri
-    Adaugat produse din fiecare subcategorie pentru prezentare homepage finala
-    Cos: linia de la marime - cand nu e; produs cand e 1 si produse cand sunt mai multe
-    Cart multiple tabs delete repara
-    Sa incarci doar imagini jpg la tensorflow
-    Model produse descriere default ' '
-    Sa mut format de la orders din server la afisare si sa fac ma size sa nu mai apara " - " cand nu are
+    Sa sterg din diagrama UML faptul ca Managerul poate vizualiza comenzi: Draft, Licenta, VPP
     
-    
-
 
 # Project Standardization
     React file: 2 spaces indentation

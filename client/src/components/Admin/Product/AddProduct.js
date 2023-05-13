@@ -14,7 +14,7 @@ const AddProduct = () => {
     discount: '',
     size: [],
     color: '',
-    description: ' ',
+    description: '',
     images: [],
     nrImages: ''
   };
