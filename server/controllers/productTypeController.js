@@ -1,4 +1,6 @@
 const ProductType = require('../models/productTypeModel');
+const { Product } = require('../models/productModel');
+const { deleteProductImages } = require('./productController');
 const mongoose = require('mongoose');
 
 const getProductTypes = async (req, res) => {
@@ -121,8 +123,18 @@ const deleteProductType = async (req, res) => {
         if (!productType) {
             return res.status(404).json({ message: 'Product type not found' });
         }
+
+        const products = await Product.find({ product_type_id: productType._id });
+
+        if (products && products.length > 0) {
+            for (let product of products) {
+                await deleteProductImages(product._id.toString());
+                await product.remove();
+            }
+        }
+
         await productType.remove();
-        return res.status(200).json({ message: 'Product type deleted' });
+        return res.status(200).json({ message: 'Product type and all associated products deleted' });
     } catch (err) {
         console.warn(err);
         return res.status(500).json({ message: 'Server error when deleting product type' });

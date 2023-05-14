@@ -257,4 +257,4 @@ const deleteProduct = async (req, res) => {
     }
 };
 
-module.exports = { getProducts, getProductsByCategory, getProductsBySubcategory, getProductsByProductType, getProduct, createProduct, updateProduct, deleteProduct, uploadImage };
+module.exports = { getProducts, getProductsByCategory, getProductsBySubcategory, getProductsByProductType, getProduct, createProduct, updateProduct, deleteProduct, uploadImage, deleteProductImages };
