@@ -5,6 +5,25 @@ import './AdminSideBar.css'
 const AdminSideBar = () => {
   const navigate = useNavigate();
 
+  const handleLogout = async () => {
+    const SERVER = 'http://localhost:8123';
+    try {
+      const response = await fetch(`${SERVER}/admin/logout`, {
+        method: 'GET',
+        credentials: 'include'
+      });
+
+      if (response.status === 200) {
+        window.location.href = '/admin/login';
+      } else {
+        throw new Error('Error occured when logging admin out');
+      }
+
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+
   return (
     <div className='AdminSideBar'>
       <div className='side-bar'>
@@ -33,6 +52,7 @@ const AdminSideBar = () => {
           <h2>Utilizatori</h2>
           <div className='subitem'>
             <h3 onClick={() => navigate('/admin/content/viewUsers')}>Vizualizare Utilizatori</h3>
+            <h3 onClick={handleLogout}>Deconectare</h3>
           </div>
         </div>
       </div>

@@ -77,3 +77,19 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+/* Media Queries */
+@media (max-width: 1280px) {
+    .IntelligentSuggestion img {
+        width: 244px;
+        height: 362px;
+    }
+
+    .IntelligentSuggestion input[type=button] {
+        width: 244px;
+    }
+
+    .IntelligentSuggestion .custom-file-upload {
+        width: 244px;
+    }
+}

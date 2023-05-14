@@ -9,3 +9,10 @@
 /* .ViewProducts .products-container {
 
 } */
+
+/* Media Queries */
+@media (max-width: 1280px) {
+    .ViewProducts {
+        right: -5%;
+    }
+}

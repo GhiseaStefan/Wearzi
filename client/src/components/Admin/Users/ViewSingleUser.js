@@ -18,7 +18,6 @@ const ViewSingleUser = ({ user, handleDelete }) => {
         <p>cod_postal: {user.cod_postal}</p>
       </div>
       <div className='buttons'>
-        <button className='orders'><i className="fa-sharp fa-solid fa-bag-shopping"></i></button>
         <button className='delete-item' onClick={() => handleDelete(user._id)}></button>
       </div>
     </div>

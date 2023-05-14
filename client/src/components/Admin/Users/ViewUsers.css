@@ -5,3 +5,10 @@
     position: relative;
     right: 10%;
 }
+
+/* Media Queries */
+@media (max-width: 1280px) {
+    .ViewUsers {
+        right: -5%;
+    }   
+}

@@ -234,3 +234,11 @@
     font-size: 14px;
     margin-top: 2px;
 }
+
+/* Media Queries */
+@media (max-width: 1280px) {
+    .Navbar .search-form input[type=search] {
+        width: 250px;
+        padding-left: 12px;
+    }
+}

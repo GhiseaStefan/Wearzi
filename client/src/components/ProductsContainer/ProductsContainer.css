@@ -41,7 +41,7 @@
     margin-top: 10px;
 }
 
-.VerticalNavBar .subcategory-list > li {
+.VerticalNavBar .subcategory-list>li {
     margin-top: 20px;
 }
 
@@ -57,7 +57,7 @@
     margin-left: 20px;
 }
 
-.VerticalNavBar .product-type-list >li {
+.VerticalNavBar .product-type-list>li {
     margin-top: 10px;
 }
 
@@ -293,4 +293,28 @@
     margin-bottom: 5px;
     background-color: #000;
     height: 5px;
+}
+
+/* Media Queries */
+@media (max-width: 1280px) {
+    .ProductsContainer .VerticalNavBar {
+        position: fixed;
+        left: 0;
+        width: 20%;
+        height: 100%;
+        background-color: #f4f4f4;
+        margin-top: -20px;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .ProductsContainer .Product {
+        margin-right: auto;
+    }
+
+    .ProductsContainer .products-list {
+        width: 1024px;
+        margin-left: 50px;
+    }
 }

@@ -35,14 +35,24 @@ const App = () => {
     return storedCartItems || {};
   });
   const isDataLoaded = Object.values(categories).length !== 0 && Object.values(subcategories).length !== 0 && Object.values(productTypes).length !== 0
+  const [hasDataFinishedLoading, setHasDataFinishedLoading] = useState(false);
 
   useEffect(() => {
-    fetchCategories().then(c => setCategories(c))
-    fetchSubcategories().then(s => setSubcategories(s))
-    fetchProductTypes().then(pt => setProductTypes(pt))
-    fetchProducts().then(p => setProducts(p))
-    storageChangeMultipleTabs(setCartItems)
-  }, [])
+    Promise.all([
+      fetchCategories(),
+      fetchSubcategories(),
+      fetchProductTypes(),
+      fetchProducts()
+    ]).then(([c, s, pt, p]) => {
+      setCategories(c);
+      setSubcategories(s);
+      setProductTypes(pt);
+      setProducts(p);
+      setHasDataFinishedLoading(true);
+    });
+    storageChangeMultipleTabs(setCartItems);
+  }, []);
+
 
   useEffect(() => {
     if (Object.values(cartItems).length !== 0) {
@@ -52,6 +62,9 @@ const App = () => {
 
   const Layout = ({ children }) => {
     const { pathname } = useLocation()
+
+    if (!hasDataFinishedLoading) return null;
+
     const definedPaths = [
       '/',
       '/barbati',

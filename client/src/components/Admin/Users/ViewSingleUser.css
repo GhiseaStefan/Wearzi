@@ -57,12 +57,3 @@
 .ViewSingleUser .delete-item:after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
-
-.ViewSingleUser .orders {
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}

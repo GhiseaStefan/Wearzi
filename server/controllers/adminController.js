@@ -20,6 +20,11 @@ const loginAdmin = async (req, res) => {
     }
 }
 
+const logoutAdmin = async (req, res) => {
+    res.clearCookie('admin-token');
+    return res.status(200).json({ message: 'Logout admin realizat cu succes' });
+}
+
 const authAdmin = async (req, res) => {
     try {
         const token = req.cookies['admin-token'];
@@ -33,7 +38,7 @@ const authAdmin = async (req, res) => {
         if (!isAdmin) {
             return res.status(404).json({ message: 'Username-ul nu a fost gasit' })
         }
-        
+
         return res.status(200).json({ message: 'Te-ai logat cu succes' });
     } catch (err) {
         console.warn(err);
@@ -41,6 +46,6 @@ const authAdmin = async (req, res) => {
     }
 };
 
-module.exports = { loginAdmin, authAdmin };
+module.exports = { loginAdmin, logoutAdmin, authAdmin };
 
 

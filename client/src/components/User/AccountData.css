@@ -72,3 +72,16 @@
     margin-top: -20px;
     color: #ec555b;
 }
+
+/* Media Queries */
+@media (max-width: 1280px) {
+    .AccountData {
+        width: 900px;
+        position: relative;
+        margin-left: 10%;
+    }
+
+    .AccountData .form-button {
+        text-align: left;
+    }
+}

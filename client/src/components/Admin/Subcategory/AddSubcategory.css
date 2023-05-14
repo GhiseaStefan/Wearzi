@@ -62,3 +62,10 @@
     color: #000;
     border: 1px solid #000;
 }
+
+/* Media Queries */
+@media (max-width: 1280px) {
+    .AddSubcategory {
+        right: -5%;
+    }   
+}
