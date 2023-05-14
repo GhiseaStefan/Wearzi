@@ -12,3 +12,9 @@
         right: -5%;
     }
 }
+
+@media only screen and (max-width: 1440px) {
+    .ViewSubcategories {
+        right: -5%;
+    }
+}

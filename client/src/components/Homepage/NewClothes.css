@@ -12,7 +12,8 @@
     margin-top: 20px;
 }
 
-.NewClothes .part1, .NewClothes .part2  {
+.NewClothes .part1,
+.NewClothes .part2 {
     height: 550px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -49,6 +50,12 @@
 }
 
 @media (max-width: 1280px) {
+    .NewClothes {
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
     .NewClothes {
         margin-bottom: 50px;
     }

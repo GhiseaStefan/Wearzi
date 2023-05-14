@@ -12,7 +12,7 @@ const loginAdmin = async (req, res) => {
         }
         const payload = { username };
         const options = { expiresIn: '12h' };
-        const token = jwt.sign(payload, process.env.SECRET_key, options);
+        const token = jwt.sign(payload, process.env.SECRET_KEY, options);
         return res.cookie('admin-token', token, { httpOnly: true, sameSite: 'strict' }).status(200).json({ message: 'Logged in successfully!' });
     } catch (err) {
         console.warn(err);

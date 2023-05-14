@@ -58,6 +58,18 @@
         width: 500px;
         height: 700px;
     }
+
+    .CategoryPage .overtext {
+        top: 30%;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .CategoryPage .section img {
+        width: 600px;
+        height: 800px;
+    }
+
     .CategoryPage .overtext {
         top: 30%;
     }

@@ -113,7 +113,12 @@
 /* Media Queries */
 @media (max-width: 1280px) {
     .AddProduct {
-        position: relative;
+        right: -5%;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .AddProduct {
         right: -5%;
     }
 }
