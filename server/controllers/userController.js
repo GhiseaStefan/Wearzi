@@ -10,7 +10,7 @@ const { validateEmail, validatePhoneNumber, validatePostalCode } = require('./ut
 
 const getUsers = async (req, res) => {
     try {
-        const users = await User.find();
+        const users = await User.find().sort('_id');
         return res.status(200).json(users);
     } catch (err) {
         console.warn(err);

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 const getProductTypes = async (req, res) => {
     try {
-        const productTypes = await ProductType.find();
+        const productTypes = await ProductType.find().sort('_id');
         return res.status(200).json(productTypes);
     } catch (err) {
         console.warn(err);
@@ -28,6 +28,11 @@ const getProductTypesBySubcategory = async (req, res) => {
             {
                 $match: {
                     "subcategory._id": mongoose.Types.ObjectId(subcategory_id)
+                }
+            },
+            {
+                $sort: {
+                    _id: 1
                 }
             }
         ]
@@ -62,6 +67,11 @@ const getProductTypesByCategory = async (req, res) => {
             {
                 $match: {
                     "category._id": mongoose.Types.ObjectId(category_id)
+                }
+            },
+            {
+                $sort: {
+                    _id: 1
                 }
             }
         ]

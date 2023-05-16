@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "640608d1fadebb8a1e2ab1f5"
+  },
+  "subcategory_name": "Imbracaminte",
+  "category_id": {
+    "$oid": "6405fa546fb18bc74bd3d9cb"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640608dafadebb8a1e2ab1f7"
+  },
+  "subcategory_name": "Incaltaminte",
+  "category_id": {
+    "$oid": "6405fa546fb18bc74bd3d9cb"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640608e4fadebb8a1e2ab1f9"
+  },
+  "subcategory_name": "Accesorii",
+  "category_id": {
+    "$oid": "640601ffbab3fa741b0ade07"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64088e6b3190c2bbdc5c4fa2"
+  },
+  "subcategory_name": "Imbracaminte",
+  "category_id": {
+    "$oid": "640601ffbab3fa741b0ade07"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d3958f597977c12201753"
+  },
+  "subcategory_name": "Accesorii",
+  "category_id": {
+    "$oid": "6405fa546fb18bc74bd3d9cb"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645ddd60de0775cf58ea5d38"
+  },
+  "subcategory_name": "Incaltaminte",
+  "category_id": {
+    "$oid": "640601ffbab3fa741b0ade07"
+  },
+  "__v": 0
+}]

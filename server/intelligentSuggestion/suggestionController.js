@@ -9,7 +9,7 @@ const { Product } = require('../models/productModel');
 const IMAGE_SIZE = 224;
 
 const getProductTypes = async () => {
-    const productTypes = await ProductType.find();
+    const productTypes = await ProductType.find().sort('_id');
     return productTypes.map(pt => pt.product_type_name);
 };
 
@@ -67,24 +67,6 @@ const getRandomProducts = (products, count) => {
     return shuffledProducts.slice(0, count);
 };
 
-const getUniqueOutfitCombinations = async (productTypes, topIndices, previousOutfitCombinations, numProductsPerType) => {
-    const uniqueOutfitCombinations = [];
-
-    for (const index of topIndices[0]) {
-        const productTypeName = productTypes[index];
-        const products = await productsByProductTypeName(productTypeName);
-        const selectedProducts = getRandomProducts(products, numProductsPerType);
-        const combination = selectedProducts.map(product => product._id.toString()).sort().join(',');
-
-        if (!previousOutfitCombinations.has(combination)) {
-            uniqueOutfitCombinations.push(selectedProducts);
-            previousOutfitCombinations.add(combination);
-        }
-    }
-
-    return uniqueOutfitCombinations;
-};
-
 const getSuggestion = async (req, res) => {
     try {
         const uploadedImagePath = path.resolve(__dirname, '..', 'public', 'temp_images', `${req.query.fileName}`);
@@ -100,16 +82,17 @@ const getSuggestion = async (req, res) => {
         const model = await tf.loadLayersModel('file://intelligentSuggestion/model.json');
 
         const predictions = model.predict(inputData);
-        const topIndices = tf.topk(predictions, 3).indices.arraySync();
+        const topIndices = tf.topk(predictions, 1).indices.arraySync();
 
         const productTypes = await getProductTypes();
 
-        const previousOutfitCombinations = new Set();
-        const uniqueOutfitCombinations = await getUniqueOutfitCombinations(productTypes, topIndices, previousOutfitCombinations, 3);
+        const productTypeName = productTypes[topIndices[0][0]];
+        const products = await productsByProductTypeName(productTypeName);
+        const selectedProducts = getRandomProducts(products, 9);
 
         fs.unlinkSync(uploadedImagePath);
 
-        return res.status(200).json({ outfitCombinations: uniqueOutfitCombinations });
+        return res.status(200).json({ outfitCombinations: selectedProducts });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Eroare in generare de sugestii' });

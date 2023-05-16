@@ -11,8 +11,8 @@ const NewClothes = () => {
   const isDataLoaded = Object.values(productsBarbati).length !== 0 && Object.values(productsFemei).length !== 0;
 
   useEffect(() => {
-    fetchProductsByCategory('6405fa546fb18bc74bd3d9cb', 4).then(products => setProductsBarbati(products));
-    fetchProductsByCategory('640601ffbab3fa741b0ade07', 4).then(products => setProductsFemei(products));
+    fetchProductsByCategory('6405fa546fb18bc74bd3d9cb', 4, true).then(products => setProductsBarbati(products));
+    fetchProductsByCategory('640601ffbab3fa741b0ade07', 4, true).then(products => setProductsFemei(products));
   }, [])
 
   return (

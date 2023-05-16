@@ -1,0 +1,244 @@
+[{
+  "_id": {
+    "$oid": "64087b0ee375da8c22f37c65"
+  },
+  "product_type_name": "Blugi",
+  "subcategory_id": {
+    "$oid": "640608d1fadebb8a1e2ab1f5"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64087b30e375da8c22f37c67"
+  },
+  "product_type_name": "Geci",
+  "subcategory_id": {
+    "$oid": "640608d1fadebb8a1e2ab1f5"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64088f143190c2bbdc5c4fa8"
+  },
+  "product_type_name": "Genti",
+  "subcategory_id": {
+    "$oid": "640608e4fadebb8a1e2ab1f9"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64088f193190c2bbdc5c4faa"
+  },
+  "product_type_name": "Bijuterii",
+  "subcategory_id": {
+    "$oid": "640608e4fadebb8a1e2ab1f9"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64088f393190c2bbdc5c4fac"
+  },
+  "product_type_name": "Rochii",
+  "subcategory_id": {
+    "$oid": "64088e6b3190c2bbdc5c4fa2"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64088f3c3190c2bbdc5c4fae"
+  },
+  "product_type_name": "Fuste",
+  "subcategory_id": {
+    "$oid": "64088e6b3190c2bbdc5c4fa2"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640c941895219fc1e0768dfe"
+  },
+  "product_type_name": "Hanorace",
+  "subcategory_id": {
+    "$oid": "640608d1fadebb8a1e2ab1f5"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64286a858ef1bac83f28e9ac"
+  },
+  "product_type_name": "Tricouri",
+  "subcategory_id": {
+    "$oid": "640608d1fadebb8a1e2ab1f5"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64286a9c8ef1bac83f28e9b6"
+  },
+  "product_type_name": "Pantaloni",
+  "subcategory_id": {
+    "$oid": "640608d1fadebb8a1e2ab1f5"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64286a9f8ef1bac83f28e9b8"
+  },
+  "product_type_name": "Camasi",
+  "subcategory_id": {
+    "$oid": "640608d1fadebb8a1e2ab1f5"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64286b148ef1bac83f28e9ef"
+  },
+  "product_type_name": "Bluze",
+  "subcategory_id": {
+    "$oid": "640608d1fadebb8a1e2ab1f5"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d37caf597977c12201603"
+  },
+  "product_type_name": "Pantofi Sport & Adidasi",
+  "subcategory_id": {
+    "$oid": "640608dafadebb8a1e2ab1f7"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d393ef597977c1220166f"
+  },
+  "product_type_name": "Cizme",
+  "subcategory_id": {
+    "$oid": "640608dafadebb8a1e2ab1f7"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d3943f597977c12201671"
+  },
+  "product_type_name": "Pantofi",
+  "subcategory_id": {
+    "$oid": "640608dafadebb8a1e2ab1f7"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d3946f597977c12201673"
+  },
+  "product_type_name": "Sandale",
+  "subcategory_id": {
+    "$oid": "640608dafadebb8a1e2ab1f7"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d3965f597977c1220175b"
+  },
+  "product_type_name": "Sepci & Palarii",
+  "subcategory_id": {
+    "$oid": "645d3958f597977c12201753"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d397df597977c1220175d"
+  },
+  "product_type_name": "Esarfe",
+  "subcategory_id": {
+    "$oid": "645d3958f597977c12201753"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d3981f597977c1220175f"
+  },
+  "product_type_name": "Curele",
+  "subcategory_id": {
+    "$oid": "645d3958f597977c12201753"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645ddd6bde0775cf58ea5d3c"
+  },
+  "product_type_name": "Accesorii de par",
+  "subcategory_id": {
+    "$oid": "640608e4fadebb8a1e2ab1f9"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645ddd82de0775cf58ea5d3e"
+  },
+  "product_type_name": "Bluze & Camasi",
+  "subcategory_id": {
+    "$oid": "64088e6b3190c2bbdc5c4fa2"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645ddd87de0775cf58ea5d40"
+  },
+  "product_type_name": "Pantaloni Scurti",
+  "subcategory_id": {
+    "$oid": "64088e6b3190c2bbdc5c4fa2"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645ddd96de0775cf58ea5d42"
+  },
+  "product_type_name": "Pantofi Sport & Adidasi",
+  "subcategory_id": {
+    "$oid": "645ddd60de0775cf58ea5d38"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645ddd9cde0775cf58ea5d44"
+  },
+  "product_type_name": "Cizme",
+  "subcategory_id": {
+    "$oid": "645ddd60de0775cf58ea5d38"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645dddabde0775cf58ea5d46"
+  },
+  "product_type_name": "Tocuri & Tocuri Inalte",
+  "subcategory_id": {
+    "$oid": "645ddd60de0775cf58ea5d38"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645f46db641066fed59cdaa7"
+  },
+  "product_type_name": "Pelerina de ploaie",
+  "subcategory_id": {
+    "$oid": "64088e6b3190c2bbdc5c4fa2"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645f525cb1a370b94867e8f2"
+  },
+  "product_type_name": "Treninguri",
+  "subcategory_id": {
+    "$oid": "640608d1fadebb8a1e2ab1f5"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645f5c87e5b41fcfbd77db7a"
+  },
+  "product_type_name": "Costume",
+  "subcategory_id": {
+    "$oid": "640608d1fadebb8a1e2ab1f5"
+  },
+  "__v": 0
+}]

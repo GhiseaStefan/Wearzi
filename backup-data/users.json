@@ -1,0 +1,653 @@
+[{
+  "_id": {
+    "$oid": "645d214ff597977c12200424"
+  },
+  "email": "clothingwearzi@gmail.com",
+  "password": "$2b$10$6uAeshaJ.ylT/fWUt.iavesyQEwLbmVpxUxU82DTreu/pNB2e43Ui",
+  "nume": "Clothing",
+  "prenume": "Wearzi",
+  "cartItems": [
+    {
+      "product_name": "Camasa",
+      "price": 139.99,
+      "quantity": 1,
+      "discount": 0,
+      "size": [
+        "M"
+      ],
+      "color": "roz",
+      "description": "",
+      "nrImages": 2,
+      "product_type_id": {
+        "$oid": "64286a9f8ef1bac83f28e9b8"
+      },
+      "_id": {
+        "$oid": "6460eca37aba25c954bcdff6"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "order_number": 1,
+      "order_date": {
+        "$date": {
+          "$numberLong": "1699215180000"
+        }
+      },
+      "order_total": 629.97,
+      "order_products": [
+        {
+          "product_name": "Hanorac",
+          "price": 209.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "S"
+          ],
+          "color": "alb",
+          "description": " ",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "640c941895219fc1e0768dfe"
+          },
+          "_id": {
+            "$oid": "645b36c34db4e59169a72342"
+          }
+        },
+        {
+          "product_name": "Hanorac",
+          "price": 209.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "M"
+          ],
+          "color": "verde",
+          "description": " ",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "640c941895219fc1e0768dfe"
+          },
+          "_id": {
+            "$oid": "645b36c84db4e59169a72344"
+          }
+        },
+        {
+          "product_name": "Hanorac",
+          "price": 209.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "L"
+          ],
+          "color": "negru",
+          "description": " ",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "640c941895219fc1e0768dfe"
+          },
+          "_id": {
+            "$oid": "645b36ce4db4e59169a72346"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "645d2246f597977c122009f5"
+      }
+    },
+    {
+      "order_number": 2,
+      "order_date": {
+        "$date": {
+          "$numberLong": "1699215240000"
+        }
+      },
+      "order_total": 200.99,
+      "order_products": [
+        {
+          "product_name": "Blugi",
+          "price": 200.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "M"
+          ],
+          "color": "albastru",
+          "description": " ",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "64087b0ee375da8c22f37c65"
+          },
+          "_id": {
+            "$oid": "645abe45a16b9ade469bd64d"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "645d227df597977c12200d7b"
+      }
+    },
+    {
+      "order_number": 3,
+      "order_date": {
+        "$date": {
+          "$numberLong": "1701732840000"
+        }
+      },
+      "order_total": 79.99,
+      "order_products": [
+        {
+          "product_name": "Sapca",
+          "price": 79.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            ""
+          ],
+          "color": "negru",
+          "description": " ",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "645d3965f597977c1220175b"
+          },
+          "_id": {
+            "$oid": "645d4f2ef597977c12202294"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "645d5170f597977c122026dc"
+      }
+    },
+    {
+      "order_number": 4,
+      "order_date": {
+        "$date": {
+          "$numberLong": "1701735480000"
+        }
+      },
+      "order_total": 449.97,
+      "order_products": [
+        {
+          "product_name": "Geanta",
+          "price": 159.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            ""
+          ],
+          "color": "galben",
+          "description": " ",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "64088f143190c2bbdc5c4fa8"
+          },
+          "_id": {
+            "$oid": "645b39c04db4e59169a72729"
+          }
+        },
+        {
+          "product_name": "Sapca",
+          "price": 79.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            ""
+          ],
+          "color": "albastru",
+          "description": " ",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "645d3965f597977c1220175b"
+          },
+          "_id": {
+            "$oid": "645d4f2af597977c12202292"
+          }
+        },
+        {
+          "product_name": "Hanorac",
+          "price": 209.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "S"
+          ],
+          "color": "verde",
+          "description": " ",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "640c941895219fc1e0768dfe"
+          },
+          "_id": {
+            "$oid": "645b36c84db4e59169a72344"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "645d5bc2f597977c1220361d"
+      }
+    },
+    {
+      "order_number": 5,
+      "order_date": {
+        "$date": {
+          "$numberLong": "1684003969030"
+        }
+      },
+      "order_total": 1247.96,
+      "order_products": [
+        {
+          "product_name": "Fusta",
+          "price": 159.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "38"
+          ],
+          "color": "rosu",
+          "description": " ",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "64088f3c3190c2bbdc5c4fae"
+          },
+          "_id": {
+            "$oid": "645df3f4de0775cf58ea683d"
+          }
+        },
+        {
+          "product_name": "Pantaloni Scurti",
+          "price": 209.99,
+          "quantity": 1,
+          "discount": 0.2,
+          "size": [
+            "38"
+          ],
+          "color": "albastru",
+          "description": " ",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "645ddd87de0775cf58ea5d40"
+          },
+          "_id": {
+            "$oid": "645df94fde0775cf58ea6c2b"
+          }
+        },
+        {
+          "product_name": "Pelerina de ploaie",
+          "price": 259.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "L"
+          ],
+          "color": "negru",
+          "description": "Produse pentru primavara; Articole pentru zile ploioase",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "645f46db641066fed59cdaa7"
+          },
+          "_id": {
+            "$oid": "645f4757641066fed59cdaf9"
+          }
+        },
+        {
+          "product_name": "Costum",
+          "price": 659.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "XL"
+          ],
+          "color": "albastru",
+          "description": "Haine pentru evenimente formale; Haine de ocazie; Haine pentru nunti; Haine pentru botezuri; Haine pentru evenimente de gala",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "645f5c87e5b41fcfbd77db7a"
+          },
+          "_id": {
+            "$oid": "645f5ce8e5b41fcfbd77dbd7"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "645fdc81d38c1db2b34370fc"
+      }
+    },
+    {
+      "order_number": 6,
+      "order_date": {
+        "$date": {
+          "$numberLong": "1684005916927"
+        }
+      },
+      "order_total": 320.98,
+      "order_products": [
+        {
+          "product_name": "Cercei",
+          "price": 199.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            ""
+          ],
+          "color": "roz",
+          "description": " Haine pentru evenimente formale; Haine de ocazie; Haine pentru nunti; Haine pentru botezuri; Haine pentru evenimente de gala",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "64088f193190c2bbdc5c4faa"
+          },
+          "_id": {
+            "$oid": "645de328de0775cf58ea60d7"
+          }
+        },
+        {
+          "product_name": "Blugi",
+          "price": 120.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "XS"
+          ],
+          "color": "albastru",
+          "description": "Produse pentru toamna; Produse groase; Haine pentru evenimente informale; Haine de casa; Haine pentru acasa; Haine pentru picnic; Haine pentru festivaluri; Haine pentru concerte; Haine confortabile pentru calatorii; Haine pentru plimbari in natura; Haine pentru drumetii; Haine pentru camping",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "64087b0ee375da8c22f37c65"
+          },
+          "_id": {
+            "$oid": "645abb82a16b9ade469bd5ef"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "645fe41c54121098618ae3fd"
+      }
+    },
+    {
+      "order_number": 7,
+      "order_date": {
+        "$date": {
+          "$numberLong": "1684006265393"
+        }
+      },
+      "order_total": 199.99,
+      "order_products": [
+        {
+          "product_name": "Cercei",
+          "price": 199.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            ""
+          ],
+          "color": "auriu",
+          "description": " Haine pentru evenimente formale; Haine de ocazie; Haine pentru nunti; Haine pentru botezuri; Haine pentru evenimente de gala",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "64088f193190c2bbdc5c4faa"
+          },
+          "_id": {
+            "$oid": "645de32dde0775cf58ea60d9"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "645fe579346e955dcfb44913"
+      }
+    },
+    {
+      "order_number": 8,
+      "order_date": {
+        "$date": {
+          "$numberLong": "1684007416655"
+        }
+      },
+      "order_total": 310.98,
+      "order_products": [
+        {
+          "product_name": "Blugi",
+          "price": 120.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "XS"
+          ],
+          "color": "albastru",
+          "description": "Produse pentru toamna; Produse groase; Haine pentru evenimente informale; Haine de casa; Haine pentru acasa; Haine pentru picnic; Haine pentru festivaluri; Haine pentru concerte; Haine confortabile pentru calatorii; Haine pentru plimbari in natura; Haine pentru drumetii; Haine pentru camping",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "64087b0ee375da8c22f37c65"
+          },
+          "_id": {
+            "$oid": "645abb82a16b9ade469bd5ef"
+          }
+        },
+        {
+          "product_name": "Rochie",
+          "price": 189.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "36"
+          ],
+          "color": "galben",
+          "description": " Produse pentru vara; Articole pentru temperaturi ridicate; Produse subtiri; Articole pentru zile insorite; Produse de sezon; Haine pentru evenimente formale; Haine de ocazie; Haine pentru nunti; Haine pentru botezuri; Haine pentru evenimente de gala",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "64088f393190c2bbdc5c4fac"
+          },
+          "_id": {
+            "$oid": "645b32d04db4e59169a72080"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "645fe9f838f5039885da5daf"
+      }
+    }
+  ],
+  "__v": 8,
+  "cod_postal": "010101",
+  "judet": "București",
+  "nr_adresa": "10",
+  "oras": "București",
+  "strada": "Strada Victoriei",
+  "telefon": "+40721122334",
+  "zi_nastere": "1990-06-16",
+  "resetPasswordExpires": {
+    "$date": {
+      "$numberLong": "1684061798763"
+    }
+  },
+  "resetPasswordToken": "dbeba22734dd86c8a7d0942406ffa9a327e2b1de"
+},{
+  "_id": {
+    "$oid": "645d2164f597977c122004cc"
+  },
+  "email": "diana@gmail.com",
+  "password": "$2b$10$m8sv0KH3LK/dkzDN9GOkE.NyQiu3FIstV15NAM0x8Y7tUjsqGGv6y",
+  "nume": "Maria",
+  "prenume": "Diana",
+  "cartItems": [
+    {
+      "product_name": "Camasa",
+      "price": 159.99,
+      "quantity": 1,
+      "discount": 0,
+      "size": [
+        "XS"
+      ],
+      "color": "albastru",
+      "description": " Produse pentru vara; Articole pentru temperaturi ridicate; Produse subtiri; Articole pentru zile insorite; Produse de sezon; Haine pentru evenimente informale; Haine de casa; Haine pentru acasa; Haine pentru picnic; Haine pentru festivaluri; Haine pentru concerte",
+      "nrImages": 2,
+      "product_type_id": {
+        "$oid": "645ddd82de0775cf58ea5d3e"
+      },
+      "_id": {
+        "$oid": "645df689de0775cf58ea6ae9"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "order_number": 1,
+      "order_date": {
+        "$date": {
+          "$numberLong": "1684047986144"
+        }
+      },
+      "order_total": 159.99,
+      "order_products": [
+        {
+          "product_name": "Fusta",
+          "price": 159.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "36"
+          ],
+          "color": "negru",
+          "description": " Produse pentru vara; Articole pentru temperaturi ridicate; Produse subtiri; Articole pentru zile insorite; Produse de sezon",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "64088f3c3190c2bbdc5c4fae"
+          },
+          "_id": {
+            "$oid": "645df3c1de0775cf58ea6825"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "6460887209b3c5d97e73705a"
+      }
+    }
+  ],
+  "__v": 1,
+  "cod_postal": "400000",
+  "judet": "Cluj",
+  "nr_adresa": "20",
+  "oras": "Cluj-Napoca",
+  "strada": "Strada Avram Iancu",
+  "telefon": "+40733344556",
+  "zi_nastere": "1985-03-25"
+},{
+  "_id": {
+    "$oid": "645d216ff597977c12200563"
+  },
+  "email": "vlad@gmail.com",
+  "password": "$2b$10$VDVB7JeHbUqcKqlL5BnNK.DIP4sP9ImesE6.taehcASdzCtv5/Kpi",
+  "nume": "Dan",
+  "prenume": "Vlad",
+  "cartItems": [
+    {
+      "product_name": "Pantaloni Scurti",
+      "price": 129.99,
+      "quantity": 1,
+      "discount": 0,
+      "size": [
+        "38"
+      ],
+      "color": "bej",
+      "description": "",
+      "nrImages": 2,
+      "product_type_id": {
+        "$oid": "645ddd87de0775cf58ea5d40"
+      },
+      "_id": {
+        "$oid": "6460ecba7aba25c954bcdff9"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "order_number": 1,
+      "order_date": {
+        "$date": {
+          "$numberLong": "1683972819884"
+        }
+      },
+      "order_total": 130.99,
+      "order_products": [
+        {
+          "product_name": "Blugi",
+          "price": 130.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "XS"
+          ],
+          "color": "negru",
+          "description": "Produse pentru toamna; Produse groase; Haine pentru evenimente informale; Haine de casa; Haine pentru acasa; Haine pentru picnic; Haine pentru festivaluri; Haine pentru concerte; Haine confortabile pentru calatorii; Haine pentru plimbari in natura; Haine pentru drumetii; Haine pentru camping",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "64087b0ee375da8c22f37c65"
+          },
+          "_id": {
+            "$oid": "645aba99a16b9ade469bd5d3"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "645f62d3074fd9f9de4fa646"
+      }
+    },
+    {
+      "order_number": 2,
+      "order_date": {
+        "$date": {
+          "$numberLong": "1683972866008"
+        }
+      },
+      "order_total": 1319.98,
+      "order_products": [
+        {
+          "product_name": "Costum",
+          "price": 659.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "XL"
+          ],
+          "color": "albastru",
+          "description": "Haine pentru evenimente formale; Haine de ocazie; Haine pentru nunti; Haine pentru botezuri; Haine pentru evenimente de gala",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "645f5c87e5b41fcfbd77db7a"
+          },
+          "_id": {
+            "$oid": "645f5ce8e5b41fcfbd77dbd7"
+          }
+        },
+        {
+          "product_name": "Costum",
+          "price": 659.99,
+          "quantity": 1,
+          "discount": 0,
+          "size": [
+            "M"
+          ],
+          "color": "alb",
+          "description": "Haine pentru evenimente formale; Haine de ocazie; Haine pentru nunti; Haine pentru botezuri; Haine pentru evenimente de gala",
+          "nrImages": 2,
+          "product_type_id": {
+            "$oid": "645f5c87e5b41fcfbd77db7a"
+          },
+          "_id": {
+            "$oid": "645f5cdae5b41fcfbd77dbd1"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "645f6302074fd9f9de4fa817"
+      }
+    }
+  ],
+  "__v": 2,
+  "cod_postal": "700000",
+  "judet": "Iași",
+  "nr_adresa": "30",
+  "oras": "Iași",
+  "strada": "Strada Palat",
+  "telefon": "+40744555666",
+  "zi_nastere": "1995-12-10"
+}]

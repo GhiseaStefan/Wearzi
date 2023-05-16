@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "6405fa546fb18bc74bd3d9cb"
+  },
+  "category_name": "Barbati",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640601ffbab3fa741b0ade07"
+  },
+  "category_name": "Femei",
+  "__v": 0
+}]

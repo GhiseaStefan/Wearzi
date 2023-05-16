@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const getSubcategories = async (req, res) => {
     try {
-        const subcategories = await Subcategory.find();
+        const subcategories = await Subcategory.find().sort('_id');
         return res.status(200).json(subcategories);
     } catch (err) {
         console.warn(err);
@@ -26,6 +26,11 @@ const getSubcategoriesByCategory = async (req, res) => {
             {
                 $match: {
                     "category._id": mongoose.Types.ObjectId(category_id)
+                }
+            },
+            {
+                $sort: {
+                    _id: 1
                 }
             }
         ]

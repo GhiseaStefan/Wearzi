@@ -141,8 +141,18 @@
     },
     {
         "language": "ro",
+        "input": "Haine de iarna",
+        "output": "Produse pentru iarna"
+    },
+    {
+        "language": "ro",
         "input": "Articole pentru temperaturi scazute",
         "output": "Articole pentru temperaturi scazute"
+    },
+    {
+        "language": "ro",
+        "input": "Haine de toamna",
+        "output": "Produse pentru toamna"
     },
     {
         "language": "ro",
@@ -153,6 +163,16 @@
         "language": "ro",
         "input": "Produse groase",
         "output": "Produse groase"
+    },
+    {
+        "language": "ro",
+        "input": "Haine groase",
+        "output": "Produse groase"
+    },
+    {
+        "language": "ro",
+        "input": "Haine pentru primavara",
+        "output": "Produse pentru primavara"
     },
     {
         "language": "ro",
@@ -176,6 +196,16 @@
     },
     {
         "language": "ro",
+        "input": "Haine pentru vara",
+        "output": "Produse pentru vara"
+    },
+    {
+        "language": "ro",
+        "input": "Haine de vara",
+        "output": "Produse pentru vara"
+    },
+    {
+        "language": "ro",
         "input": "Articole pentru temperaturi ridicate",
         "output": "Articole pentru temperaturi ridicate"
     },
@@ -192,6 +222,11 @@
     {
         "language": "ro",
         "input": "Produse de sezon",
+        "output": "Produse de sezon"
+    },
+    {
+        "language": "ro",
+        "input": "Haine de sezon",
         "output": "Produse de sezon"
     },
     {
@@ -248,6 +283,11 @@
         "language": "ro",
         "input": "Haine pentru camping",
         "output": "Haine pentru camping"
+    },
+    {
+        "language": "ro",
+        "input": "Haine de seara",
+        "output": "Haine pentru evenimente formale"
     },
     {
         "language": "ro",

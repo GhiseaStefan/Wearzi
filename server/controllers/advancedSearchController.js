@@ -87,6 +87,11 @@ const advSearch = async (req, res) => {
                         ]
                     }
                 },
+                {
+                    $sort: {
+                        _id: 1
+                    }
+                }
             ]
             const products = await Product.aggregate(pipeline);
             shuffleArray(products)

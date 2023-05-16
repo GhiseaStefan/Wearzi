@@ -192,3 +192,27 @@
     padding: 4px 8px;
     margin-bottom: 10px;
 }
+
+@media only screen and (max-width: 1440px) {
+    .ShoppingCart .info-finalizing {
+        max-height: 450px;
+    }
+
+    .ShoppingCart .error {
+        padding: 2px 4px;
+        margin-right: 50px;
+        position: relative;
+        top: 50px;
+    }
+
+    .ShoppingCart .cupon-container {
+        position: relative;
+        top: 20px;
+    }
+
+    .ShoppingCart .cupon-container div {
+        position: relative;
+        top: 20px;
+        left: -20px;
+    }
+}

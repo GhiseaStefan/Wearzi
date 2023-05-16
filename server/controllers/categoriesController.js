@@ -6,7 +6,7 @@ const getCategories = async (req, res) => {
         if (limit) {
             limit = parseInt(limit, 10);
         }
-        const categories = await Category.find().limit(limit);
+        const categories = await Category.find().limit(limit).sort('_id');
         return res.status(200).json(categories);
     } catch (err) {
         console.warn(err);

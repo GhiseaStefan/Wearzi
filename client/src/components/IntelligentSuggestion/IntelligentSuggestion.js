@@ -67,13 +67,21 @@ const IntelligentSuggestion = () => {
       <div className='suggestions-container'>
         {isDataLoaded ?
           <>
-            {suggestions.slice(0, 3).map((o, index) => (
-              <div key={index}>
-                {o[0] && <a href={`/products/${o[0]._id}`}><img src={`${SERVER}/images/products/${o[0]._id}/img1.jpg`} alt='' /></a>}
-                {o[1] && <a href={`/products/${o[1]._id}`}><img src={`${SERVER}/images/products/${o[1]._id}/img1.jpg`} alt='' /></a>}
-                {o[2] && <a href={`/products/${o[2]._id}`}><img src={`${SERVER}/images/products/${o[2]._id}/img1.jpg`} alt='' /></a>}
-              </div>
-            ))}
+            <div>
+              {suggestions[0] && <a href={`/products/${suggestions[0]._id}`}><img src={`${SERVER}/images/products/${suggestions[0]._id}/img1.jpg`} alt='' /></a>}
+              {suggestions[1] && <a href={`/products/${suggestions[1]._id}`}><img src={`${SERVER}/images/products/${suggestions[1]._id}/img1.jpg`} alt='' /></a>}
+              {suggestions[2] && <a href={`/products/${suggestions[2]._id}`}><img src={`${SERVER}/images/products/${suggestions[2]._id}/img1.jpg`} alt='' /></a>}
+            </div>
+            <div>
+              {suggestions[3] && <a href={`/products/${suggestions[3]._id}`}><img src={`${SERVER}/images/products/${suggestions[3]._id}/img1.jpg`} alt='' /></a>}
+              {suggestions[4] && <a href={`/products/${suggestions[4]._id}`}><img src={`${SERVER}/images/products/${suggestions[4]._id}/img1.jpg`} alt='' /></a>}
+              {suggestions[5] && <a href={`/products/${suggestions[5]._id}`}><img src={`${SERVER}/images/products/${suggestions[5]._id}/img1.jpg`} alt='' /></a>}
+            </div>
+            <div>
+              {suggestions[6] && <a href={`/products/${suggestions[6]._id}`}><img src={`${SERVER}/images/products/${suggestions[6]._id}/img1.jpg`} alt='' /></a>}
+              {suggestions[7] && <a href={`/products/${suggestions[7]._id}`}><img src={`${SERVER}/images/products/${suggestions[7]._id}/img1.jpg`} alt='' /></a>}
+              {suggestions[8] && <a href={`/products/${suggestions[8]._id}`}><img src={`${SERVER}/images/products/${suggestions[8]._id}/img1.jpg`} alt='' /></a>}
+            </div>
           </>
           :
           <>

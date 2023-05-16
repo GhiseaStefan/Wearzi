@@ -6,7 +6,7 @@ const { Product } = require('../models/productModel');
 
 const getProducts = async (req, res) => {
     try {
-        const products = await Product.find();
+        const products = await Product.find().sort('_id');
         return res.status(200).json(products);
     } catch (err) {
         console.warn(err);
@@ -17,9 +17,12 @@ const getProducts = async (req, res) => {
 const getProductsByCategory = async (req, res) => {
     try {
         const { category_id } = req.params;
-        let { limit } = req.query;
+        let { limit, descending } = req.query;
         if (limit) {
             limit = parseInt(limit, 10);
+        }
+        if (descending) {
+            descending = descending === 'true' ? -1 : 1;
         }
         const pipeline = [
             {
@@ -53,7 +56,7 @@ const getProductsByCategory = async (req, res) => {
             },
             {
                 $sort: {
-                    _id: -1
+                    _id: descending
                 }
             }
         ]
@@ -97,6 +100,11 @@ const getProductsBySubcategory = async (req, res) => {
                     "subcategory._id": mongoose.Types.ObjectId(subcategory_id)
                 }
             },
+            {
+                $sort: {
+                    _id: 1
+                }
+            }
         ]
         if (limit) {
             pipeline.push({ $limit: limit })
@@ -130,6 +138,11 @@ const getProductsByProductType = async (req, res) => {
                     "product_type._id": mongoose.Types.ObjectId(product_type_id)
                 }
             },
+            {
+                $sort: {
+                    _id: 1
+                }
+            }
         ]
         if (limit) {
             pipeline.push({ $limit: limit })

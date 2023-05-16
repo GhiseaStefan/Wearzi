@@ -8,7 +8,7 @@ const IMAGE_SIZE = 224;
 const EPOCHS = 12;
 
 const getProductTypes = async () => {
-    const productTypes = await ProductType.find();
+    const productTypes = await ProductType.find().sort('_id');
     return productTypes.map(pt => pt.product_type_name);
 };
 
