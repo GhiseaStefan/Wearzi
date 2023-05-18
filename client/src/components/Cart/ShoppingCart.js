@@ -1,46 +1,16 @@
+import { useState } from 'react'
+
 import './ShoppingCart.css'
 
 import totalCantitate from './functions/totalCantitate'
 import totalPret from './functions/totalPret'
 import discountedPrice from './functions/discountedPrice'
-import { useState } from 'react'
+import removeFromCart from './functions/removeFromCart'
+import handleSendOrder from './functions/handleSendOrder'
 
 const ShoppingCart = ({ cartItems, setCartItems, loggedIn, user }) => {
   const SERVER = 'http://localhost:8123'
   const [error, setError] = useState('')
-
-  const removeFromCart = (productCartId) => {
-    const updatedCartItems = { ...cartItems };
-    delete updatedCartItems[productCartId];
-    setCartItems(updatedCartItems);
-    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
-  }
-
-  const handleSendOrder = async () => {
-    if (loggedIn) {
-      try {
-        const response = await fetch(`${SERVER}/user/sendOrder`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', },
-          body: JSON.stringify({
-            userId: user._id,
-            cartItems: Object.values(cartItems),
-          }),
-        });
-
-        if (response.ok) {
-          setCartItems({});
-          localStorage.setItem("cartItems", JSON.stringify({}));
-          setError('');
-        }
-
-      } catch (err) {
-        console.warn(`Eroare la trimiterea comenzii: ${err.message}`);
-      }
-    } else {
-      setError('Trebuie sa va autentificati pentru a trimite comanda')
-    }
-  };
 
   return (
     <div className='ShoppingCart'>
@@ -68,7 +38,7 @@ const ShoppingCart = ({ cartItems, setCartItems, loggedIn, user }) => {
                     {ci.size[0] !== '' && (<p>Marime: {ci.size.join(', ')}</p>)}
                     <p>Cantitate: {ci.quantity}</p>
                   </div>
-                  <button onClick={() => removeFromCart(ci._id)}></button>
+                  <button onClick={() => removeFromCart(ci._id, cartItems, setCartItems)}></button>
                 </div>
               ))}
             </div>
@@ -78,7 +48,7 @@ const ShoppingCart = ({ cartItems, setCartItems, loggedIn, user }) => {
               <p>Pretul Total: {totalPret(cartItems).toFixed(2)} RON</p>
               <p>Livrare: 0 RON</p>
               <p className='bold'>Total cu TVA: {totalPret(cartItems).toFixed(2)} RON</p>
-              <div className='btn btn-attention' onClick={handleSendOrder}>Finalizeaza comanda</div>
+              <div className='btn btn-attention' onClick={() => handleSendOrder(loggedIn, user, cartItems, setCartItems, setError)}>Finalizeaza comanda</div>
               <div className='cupon-container'>
                 <input type='text' placeholder='Adauga cupon' />
                 <div className='btn'>Adauga</div>

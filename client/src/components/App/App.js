@@ -1,31 +1,35 @@
 import { useEffect, useState } from 'react'
-import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import './App.css'
 import "@fontsource/poppins";
 
-import Navbar from '../Navbar/Navbar'
 import Homepage from '../Homepage/Homepage';
 import CategoryPage from '../CategoryPage/CategoryPage';
-import ProductsContainer from '../ProductsContainer/ProductsContainer';
-import ProductPage from '../ProductPage/ProductPage';
-import Footer from '../Footer/Footer'
 import ShoppingCart from '../Cart/ShoppingCart';
-import NotFound from '../NotFound/NotFound';
+import Register from '../User/Register';
+import Login from '../User/Login';
+import ResetPassword from '../ResetPassword/ResetPassword';
+import ForgotPassword from '../ResetPassword/ForgotPassword';
+import Admin from '../Admin/Admin';
+import AppLayout from './AppLayout';
 import fetchSubcategories from './generalFunctions/fetchSubcategories'
 import fetchProductTypes from './generalFunctions/fetchProductTypes'
 import fetchCategories from './generalFunctions/fetchCategories';
 import fetchProducts from './generalFunctions/fetchProducts';
 import storageChangeMultipleTabs from './functions/storageChangeMultipleTabs';
-import Register from '../User/Register';
-import Login from '../User/Login';
-import Account from '../User/Account';
-import ResetPassword from '../ResetPassword/ResetPassword';
-import ForgotPassword from '../ResetPassword/ForgotPassword';
-import IntelligentSuggestion from '../IntelligentSuggestion/IntelligentSuggestion';
-import Admin from '../Admin/Admin';
+import checkLoggedIn from './functions/checkLoggedIn';
+import getUserCart from './functions/getUserCart';
+import updateUserCart from './functions/updateUserCart';
+import generateSubcategoryRoutes from './functions/generateSubcategoryRoutes';
+import generateProductTypeRoutes from './functions/generateProductTypeRoutes';
+import generateProductRoutes from './functions/generateProductRoutes';
+import generateAccountRoutes from './functions/generateAccountRoutes';
 
 const App = () => {
+  const [user, setUser] = useState({});
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState({})
   const [subcategories, setSubcategories] = useState({})
   const [productTypes, setProductTypes] = useState({})
@@ -34,231 +38,67 @@ const App = () => {
     const storedCartItems = JSON.parse(localStorage.getItem("cartItems"));
     return storedCartItems || {};
   });
-  const isDataLoaded = Object.values(categories).length !== 0 && Object.values(subcategories).length !== 0 && Object.values(productTypes).length !== 0
   const [hasDataFinishedLoading, setHasDataFinishedLoading] = useState(false);
+  const [hasProductsFinishedLoading, setHasProductsFinishedLoading] = useState(false);
 
   useEffect(() => {
+    checkLoggedIn(setUser, setLoggedIn, setLoading);
     Promise.all([
       fetchCategories(),
       fetchSubcategories(),
       fetchProductTypes(),
-      fetchProducts()
-    ]).then(([c, s, pt, p]) => {
+    ]).then(([c, s, pt]) => {
       setCategories(c);
       setSubcategories(s);
       setProductTypes(pt);
-      setProducts(p);
       setHasDataFinishedLoading(true);
     });
+
+    fetchProducts().then((p) => {
+      setProducts(p);
+      setHasProductsFinishedLoading(true);
+    });
+
     storageChangeMultipleTabs(setCartItems);
   }, []);
-
 
   useEffect(() => {
     if (Object.values(cartItems).length !== 0) {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
     }
-  }, [cartItems]);
-
-  const Layout = ({ children }) => {
-    const { pathname } = useLocation()
-
-    if (!hasDataFinishedLoading) return null;
-
-    const definedPaths = [
-      '/',
-      '/barbati',
-      '/femei',
-      ...Object.values(subcategories).map((s) => {
-        if (
-          s.category_id === '6405fa546fb18bc74bd3d9cb' ||
-          s.category_id === '640601ffbab3fa741b0ade07'
-        ) {
-          return `/${categories[s.category_id].category_name.toLowerCase()}/${s.subcategory_name.toLowerCase()}`;
-        }
-        return null;
-      }),
-      ...Object.values(productTypes).map((pt) => {
-        const s = subcategories[pt.subcategory_id];
-        const c = categories[s.category_id];
-        const productTypeName = pt.product_type_name.toLowerCase().replace(/ /g, "+");
-        return `/${c.category_name.toLowerCase()}/${s.subcategory_name.toLowerCase()}/${productTypeName}`;
-      }),
-      ...Object.values(products).map((p) => `/products/${p._id}`),
-      '/shoppingCart',
-      '/register',
-      '/login',
-      '/forgotPassword',
-      '/resetPassword/*',
-      '/account/accountData',
-      '/account/orderHistory',
-      '/intelligentSuggestion',
-      '/admin/*',
-    ];
-
-    const wildcardPatterns = [/^\/resetPassword\/.+/];
-    const wildcardPatterns2 = [/^\/admin\/.+/];
-    if (!definedPaths.includes(pathname) && !wildcardPatterns.some((pattern) => pattern.test(pathname)) && !wildcardPatterns2.some((pattern) => pattern.test(pathname))) {
-      return <NotFound />;
-    }
-    if (/^\/admin\/.+/.test(pathname) || /^\/resetPassword\/.+/.test(pathname) || pathname === '/forgotPassword') {
-      return <>{children}</>
-    }
-    return (
-      <>
-        <Navbar cartItems={cartItems} loggedIn={loggedIn} setLoggedIn={setLoggedIn} user={user} />
-        {children}
-        <Footer />
-      </>
-    )
-  }
-
-  // user mode
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState({});
-
-  const checkLoggedIn = async () => {
-    const SERVER = 'http://localhost:8123';
-    try {
-      const response = await fetch(`${SERVER}/user/auth`, {
-        method: 'GET',
-        credentials: 'include',
-      });
-
-      if (response.status === 200) {
-        const data = await response.json();
-        setUser(data.user);
-        setLoggedIn(true);
-      } else if (response.status === 401) {
-        setLoggedIn(false);
-        setUser({});
-      } else {
-        setLoggedIn(false);
-        setUser({});
-        console.error(`Unexpected status code: ${response.status}`);
-      }
-    } catch (error) {
-      setLoggedIn(false);
-      setUser({});
-      console.error('Error fetching auth status:', error);
-    }
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    checkLoggedIn()
-  }, []);
-
-  // User Cart
-  const updateUserCart = async (updatedCartItems) => {
-    if (loggedIn) {
-      try {
-        const SERVER = 'http://localhost:8123';
-        const response = await fetch(`${SERVER}/user/updateCart`, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            userId: user._id,
-            cartItems: updatedCartItems
-          })
-        });
-      } catch (err) {
-        console.warn(err);
-      }
-    }
-  }
-
-  const getUserCart = async () => {
-    if (loggedIn) {
-      try {
-        const SERVER = 'http://localhost:8123';
-        const response = await fetch(`${SERVER}/user/updateCart?userId=${user._id}`);
-        const data = await response.json();
-        if (response.status === 200) {
-          const userCartItems = data.cartItems;
-          return userCartItems;
-        }
-      } catch (err) {
-        console.warn(err);
-      }
-    }
-    return {};
-  }
-
-  useEffect(() => {
-    updateUserCart(cartItems);
+    updateUserCart(cartItems, loggedIn, user);
   }, [cartItems]);
 
   useEffect(() => {
     if (loggedIn && user._id) {
-      getUserCart().then((userCartItems) => {
+      getUserCart(loggedIn, user).then((userCartItems) => {
         const combinedCartItems = { ...cartItems, ...userCartItems };
         setCartItems(combinedCartItems);
       });
     }
   }, [loggedIn, user]);
 
-
-  // User Cart
+  const appLayoutState = { cartItems, loggedIn, setLoggedIn, user, hasDataFinishedLoading, hasProductsFinishedLoading, categories, subcategories, productTypes, products }
 
   return (
     <div className='App'>
-      {isDataLoaded &&
-        <Layout>
-          <Routes>
-            <Route path='/' element={<Homepage />} />
-            <Route path='/barbati' element={
-              <CategoryPage category={categories['6405fa546fb18bc74bd3d9cb']} subcategory1='Imbracaminte' productType1='Blugi' subcategory2='Imbracaminte' productType2='Hanorace' />}
-            />
-            <Route path='/femei' element={
-              <CategoryPage category={categories['640601ffbab3fa741b0ade07']} subcategory1='Imbracaminte' productType1='Fuste' subcategory2='Accesorii' productType2='Genti' />}
-            />
-            {Object.values(subcategories).map((s) => {
-              if (s.category_id === '6405fa546fb18bc74bd3d9cb' || s.category_id === '640601ffbab3fa741b0ade07') {
-                return <Route
-                  key={s._id}
-                  path={`/${categories[s.category_id].category_name.toLowerCase()}/${s.subcategory_name.toLowerCase()}`}
-                  element={<ProductsContainer containerType='Subcategory' category={categories[s.category_id]} subcategory={s} />}
-                />
-              }
-            })}
-            {Object.values(productTypes).map((pt) => {
-              const s = subcategories[pt.subcategory_id];
-              const c = categories[s.category_id];
-              const productTypeName = pt.product_type_name.toLowerCase().replace(/ /g, "+");
-              return (
-                <Route
-                  key={pt._id}
-                  path={`/${c.category_name.toLowerCase()}/${s.subcategory_name.toLowerCase()}/${productTypeName}`}
-                  element={<ProductsContainer containerType='ProductType' category={c} subcategory={s} productType={pt} />}
-                />
-              );
-            })}
-            {Object.values(products).length !== 0 && Object.values(products).map(p => {
-              return <Route key={p._id} path={`/products/${p._id}`} element={<ProductPage product={p} cartItems={cartItems} setCartItems={setCartItems} />} />
-            })}
-            <Route path='/shoppingCart' element={<ShoppingCart cartItems={cartItems} setCartItems={setCartItems} loggedIn={loggedIn} user={user} />} />
-            <Route path='/register' element={<Register setLoggedIn={setLoggedIn} />} />
-            <Route path='/login' element={<Login setLoggedIn={setLoggedIn} />} />
-            {loggedIn ?
-              <>
-                <Route path='/account/*' element={<Account user={user} />} />
-                <Route path='/intelligentSuggestion' element={<IntelligentSuggestion />} />
-              </>
-              :
-              !loading &&
-              <>
-                <Route path='/account/*' element={<Navigate replace to='/login' />} />
-                <Route path='/intelligentSuggestion' element={<Navigate replace to='/login' />} />
-              </>
-            }
-            <Route path='/forgotPassword' element={<ForgotPassword />} />
-            <Route path='/resetPassword/:token' element={<ResetPassword />} />
-            <Route path='/admin/*' element={<Admin />} />
-          </Routes>
-        </Layout>
-      }
+      <AppLayout appLayoutState={appLayoutState}>
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/barbati' element={<CategoryPage category={categories['6405fa546fb18bc74bd3d9cb']} subcategory1='Imbracaminte' productType1='Blugi' subcategory2='Imbracaminte' productType2='Hanorace' />} />
+          <Route path='/femei' element={<CategoryPage category={categories['640601ffbab3fa741b0ade07']} subcategory1='Imbracaminte' productType1='Fuste' subcategory2='Accesorii' productType2='Genti' />} />
+          {generateSubcategoryRoutes(categories, subcategories)}
+          {generateProductTypeRoutes(categories, subcategories, productTypes)}
+          {generateProductRoutes(products, cartItems, setCartItems)}
+          <Route path='/shoppingCart' element={<ShoppingCart cartItems={cartItems} setCartItems={setCartItems} loggedIn={loggedIn} user={user} />} />
+          <Route path='/register' element={<Register setLoggedIn={setLoggedIn} />} />
+          <Route path='/login' element={<Login setLoggedIn={setLoggedIn} />} />
+          {generateAccountRoutes(loggedIn, loading, user)}
+          <Route path='/forgotPassword' element={<ForgotPassword />} />
+          <Route path='/resetPassword/:token' element={<ResetPassword />} />
+          <Route path='/admin/*' element={<Admin />} />
+        </Routes>
+      </AppLayout>
     </div>
   )
 }
