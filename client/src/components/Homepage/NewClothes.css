@@ -33,6 +33,11 @@
     margin-left: 50px;
 }
 
+.NewClothes .product-display:first-child {
+    margin-left: 0;
+    margin-right: 50px;
+}
+
 .NewClothes img {
     width: 250px;
     height: 350px;
